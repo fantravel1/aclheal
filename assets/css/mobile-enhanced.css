@@ -1,0 +1,444 @@
+/* ===================================
+   ACL Heal - Enhanced Mobile Optimization
+   100% mobile-first responsive design
+   =================================== */
+
+/* Mobile-First Touch Optimizations */
+@media (max-width: 1024px) {
+    /* Increase touch targets to minimum 44x44px (Apple HIG & WCAG 2.5.5) */
+    button,
+    a,
+    input[type="submit"],
+    input[type="button"],
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Prevent text size adjustment on device orientation */
+    html {
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    /* Improve tap highlighting */
+    * {
+        -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+    }
+
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Optimize form inputs for mobile */
+    input,
+    textarea,
+    select {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+        max-width: 100%;
+    }
+
+    /* Better spacing for mobile */
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Optimize images for mobile */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Tablet Optimizations (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .diff-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stage-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Optimizations (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Typography scaling */
+    :root {
+        --spacing-xs: 0.375rem;
+        --spacing-sm: 0.75rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-2xl: 2.5rem;
+    }
+
+    /* Responsive typography */
+    h1 {
+        font-size: 1.875rem; /* 30px */
+        line-height: 1.2;
+    }
+    h2 {
+        font-size: 1.5rem; /* 24px */
+    }
+    h3 {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .lead {
+        font-size: 1.125rem;
+    }
+
+    /* Header optimizations */
+    .site-header {
+        padding: 0.75rem 0;
+    }
+
+    .logo a {
+        font-size: 1.25rem;
+    }
+
+    /* Crisis banner - more compact on mobile */
+    .crisis-banner {
+        font-size: 0.8125rem;
+        padding: 0.625rem var(--spacing-sm);
+    }
+
+    /* Hero section mobile */
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-lg);
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 var(--spacing-md);
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    /* Mobile navigation improvements */
+    .nav-menu {
+        gap: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown > a::after {
+        content: ' ▼';
+        font-size: 0.75rem;
+        float: right;
+    }
+
+    .dropdown.active > a::after {
+        content: ' ▲';
+    }
+
+    /* Stats grid mobile */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin: var(--spacing-lg) 0;
+    }
+
+    .stat {
+        padding: var(--spacing-md);
+    }
+
+    .stat-number {
+        font-size: 2.25rem;
+    }
+
+    /* Journey timeline mobile */
+    .timeline-stage {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .stage-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .stage-date {
+        align-self: flex-start;
+    }
+
+    /* Subscribe form mobile */
+    .journey-subscribe {
+        padding: var(--spacing-lg);
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+    }
+
+    .subscribe-form input[type="email"] {
+        width: 100%;
+    }
+
+    /* Cards optimizations */
+    .diff-card,
+    .stage-card {
+        padding: var(--spacing-md);
+    }
+
+    .diff-icon {
+        font-size: 2.5rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Footer mobile */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .footer-col {
+        text-align: left;
+    }
+
+    /* Section padding mobile */
+    .mission,
+    .nolan-journey,
+    .differentiators,
+    .get-started {
+        padding: var(--spacing-xl) 0;
+    }
+
+    /* Disclaimer mobile */
+    .disclaimer {
+        padding: var(--spacing-md) 0;
+    }
+
+    .disclaimer-content {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+/* Small Mobile Optimizations (max-width: 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.625rem; /* 26px */
+    }
+    h2 {
+        font-size: 1.375rem; /* 22px */
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .diff-icon {
+        font-size: 2rem;
+    }
+
+    /* Tighter spacing on very small screens */
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .hero-subtitle {
+        font-size: 0.9375rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .section-intro {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* Menu open body lock (prevent scroll) */
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Mobile-specific utilities */
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+}
+
+/* Touch-friendly spacing for interactive elements */
+@media (max-width: 768px) {
+    .nav-menu a,
+    .dropdown-menu a,
+    .stage-card,
+    .btn,
+    button,
+    input[type="submit"] {
+        -webkit-tap-highlight-color: rgba(37, 99, 235, 0.15);
+        cursor: pointer;
+    }
+
+    /* Prevent double-tap zoom on links */
+    a, button {
+        touch-action: manipulation;
+    }
+}
+
+/* Safe area insets for notched devices (iPhone X+) */
+@supports (padding: max(0px)) {
+    .container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    .site-header {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+
+    .site-footer {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        padding-bottom: max(var(--spacing-lg), env(safe-area-inset-bottom));
+    }
+}
+
+/* Optimize scrolling performance */
+* {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Loading optimization for mobile */
+@media (max-width: 768px) {
+    /* Disable animations on mobile for better performance */
+    .timeline-stage:hover,
+    .diff-card:hover,
+    .stage-card:hover {
+        transform: none;
+    }
+
+    /* Keep shadow effects lighter on mobile */
+    .journey-subscribe,
+    .timeline-stage:hover {
+        box-shadow: var(--shadow-sm);
+    }
+}
+
+/* High DPI / Retina display optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimize for retina displays */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Dark mode support (respects user preference) */
+@media (prefers-color-scheme: dark) {
+    /* Optional: Add dark mode styles here if desired */
+    /* Currently maintaining light mode for medical/trust context */
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Print optimizations */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+
+    h2, h3 {
+        page-break-after: avoid;
+    }
+
+    .crisis-banner,
+    .site-header,
+    .site-footer,
+    .journey-subscribe,
+    .hero-cta,
+    .menu-toggle {
+        display: none !important;
+    }
+}
