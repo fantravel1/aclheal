@@ -1,0 +1,19 @@
+{
+  "name": "ACL Heal - Complete ACL Recovery Resource",
+  "short_name": "ACL Heal",
+  "description": "Evidence-based ACL recovery guidance, mental health support, and community resources for every stage of your healing journey.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait-primary"
+}
