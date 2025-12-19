@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li class="dropdown" role="none">
                         <a href="/tools/" role="menuitem" aria-haspopup="true" aria-expanded="false">Tools</a>
                         <ul class="dropdown-menu" role="menu">
+                            <li role="none"><a href="/tools/phq9.html" role="menuitem">PHQ-9 Depression Screening</a></li>
                             <li role="none"><a href="/tools/gad7.html" role="menuitem">GAD-7 Anxiety Screening</a></li>
                             <li role="none"><a href="/tools/acl-rsi.html" role="menuitem">ACL-RSI Readiness Scale</a></li>
                             <li role="none"><a href="/tools/return-to-sport-checklist.html" role="menuitem">Return-to-Sport Checklist</a></li>
-                            <li role="none"><a href="/mental-health.html#phq9" role="menuitem">PHQ-9 Depression Screening</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" role="none">
