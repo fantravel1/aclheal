@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span></span>
                 </button>
                 <ul class="nav-menu" role="menubar">
-                    <li role="none"><a href="/#nolans-journey" role="menuitem">Nolan's Journey</a></li>
                     <li class="dropdown" role="none">
                         <a href="/#recovery-stages" role="menuitem" aria-haspopup="true" aria-expanded="false">Recovery Stages</a>
                         <ul class="dropdown-menu" role="menu">
@@ -37,17 +36,27 @@ document.addEventListener('DOMContentLoaded', function() {
                             <li role="none"><a href="/stages/long-term.html" role="menuitem">Long-Term: 12-24+ Months</a></li>
                         </ul>
                     </li>
+                    <li role="none"><a href="/exercises/" role="menuitem">Exercises</a></li>
                     <li class="dropdown" role="none">
-                        <a href="/#education" role="menuitem" aria-haspopup="true" aria-expanded="false">Education</a>
+                        <a href="/tools/" role="menuitem" aria-haspopup="true" aria-expanded="false">Tools</a>
                         <ul class="dropdown-menu" role="menu">
+                            <li role="none"><a href="/tools/gad7.html" role="menuitem">GAD-7 Anxiety Screening</a></li>
+                            <li role="none"><a href="/tools/acl-rsi.html" role="menuitem">ACL-RSI Readiness Scale</a></li>
+                            <li role="none"><a href="/tools/return-to-sport-checklist.html" role="menuitem">Return-to-Sport Checklist</a></li>
+                            <li role="none"><a href="/mental-health.html#phq9" role="menuitem">PHQ-9 Depression Screening</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" role="none">
+                        <a href="/guides/" role="menuitem" aria-haspopup="true" aria-expanded="false">Guides</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="none"><a href="/guides/" role="menuitem">Graft-Specific Guides</a></li>
                             <li role="none"><a href="/education/knee-anatomy.html" role="menuitem">Knee Anatomy & ACL</a></li>
                             <li role="none"><a href="/education/surgery-options.html" role="menuitem">Surgery & Graft Types</a></li>
                             <li role="none"><a href="/education/protocols.html" role="menuitem">Recovery Protocols</a></li>
-                            <li role="none"><a href="/education/mental-health.html" role="menuitem">Mental Health</a></li>
                         </ul>
                     </li>
-                    <li role="none"><a href="/resources.html" role="menuitem">Resources</a></li>
-                    <li role="none"><a href="/mental-health.html" class="highlight" role="menuitem">Mental Health Support</a></li>
+                    <li role="none"><a href="/faq.html" role="menuitem">FAQ</a></li>
+                    <li role="none"><a href="/mental-health.html" class="highlight" role="menuitem">Mental Health</a></li>
                 </ul>
             </nav>
         </div>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
+    <title>ACL Recovery Tools & Assessments | Screening Tools | ACL Heal</title>
+    <meta name="title" content="ACL Recovery Tools & Assessments | Screening Tools | ACL Heal">
+    <meta name="description" content="Free interactive tools for ACL recovery: PHQ-9 depression screening, GAD-7 anxiety assessment, ACL-RSI psychological readiness, and progress tracking.">
+    <meta name="keywords" content="ACL recovery tools, PHQ-9 screening, GAD-7 anxiety, ACL-RSI, psychological readiness, mental health screening, ACL assessment">
+    <meta name="author" content="Nolan Ambrosino">
+    <link rel="canonical" href="https://aclheal.com/tools/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aclheal.com/tools/">
+    <meta property="og:title" content="ACL Recovery Tools & Assessments">
+    <meta property="og:description" content="Free validated screening tools for mental health and psychological readiness during ACL recovery.">
+    <meta property="og:site_name" content="ACL Heal">
+
+    <!-- Favicon & Stylesheets -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/mobile-enhanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .tools-hero {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+            color: white;
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+        .tools-hero h1 { color: white; margin-bottom: var(--spacing-md); }
+        .tools-hero p { color: rgba(255, 255, 255, 0.95); max-width: 700px; margin: 0 auto; }
+
+        .tools-disclaimer {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent-color);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            border-radius: var(--border-radius);
+        }
+        .tools-disclaimer h3 { color: #92400e; margin-bottom: var(--spacing-sm); }
+        .tools-disclaimer p { color: #78350f; margin: 0; font-size: 0.95rem; }
+
+        .tools-section { padding: var(--spacing-2xl) 0; }
+        .tools-section h2 { text-align: center; margin-bottom: var(--spacing-xl); }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+        }
+
+        .tool-card-header {
+            padding: var(--spacing-lg);
+            color: white;
+            text-align: center;
+        }
+        .tool-card-header.mental-health { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .tool-card-header.psychological { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); }
+        .tool-card-header.physical { background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); }
+
+        .tool-icon { font-size: 3rem; margin-bottom: var(--spacing-sm); }
+        .tool-card-header h3 { color: white; margin: 0; font-size: 1.25rem; }
+
+        .tool-card-body {
+            padding: var(--spacing-lg);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .tool-card-body p { flex: 1; font-size: 0.95rem; margin-bottom: var(--spacing-md); }
+
+        .tool-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        .tool-tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+        }
+
+        .tool-cta {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .tool-cta:hover {
+            background: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .privacy-note {
+            background: #eff6ff;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+            text-align: center;
+        }
+        .privacy-note h3 { color: var(--primary-color); margin-bottom: var(--spacing-sm); }
+        .privacy-note p { margin: 0; font-size: 0.95rem; }
+
+        .coming-soon {
+            opacity: 0.7;
+            position: relative;
+        }
+        .coming-soon::after {
+            content: "Coming Soon";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="tools-hero">
+        <div class="container">
+            <h1>Recovery Tools & Assessments</h1>
+            <p>Free, validated screening tools to help you and your healthcare team monitor your mental health and psychological readiness throughout your ACL recovery journey.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="tools-section">
+        <div class="container">
+            <!-- Disclaimer -->
+            <div class="tools-disclaimer">
+                <h3>Important Information About These Tools</h3>
+                <p>These screening tools are for <strong>informational purposes only</strong> and are NOT diagnostic instruments. They cannot replace professional evaluation by a qualified healthcare provider. All responses are stored <strong>only on your device</strong> (localStorage) and are never transmitted to any server. If you're experiencing a mental health crisis, please call or text <strong>988</strong> (Suicide & Crisis Lifeline) immediately.</p>
+            </div>
+
+            <h2>Mental Health Screening Tools</h2>
+            <div class="tools-grid">
+                <!-- PHQ-9 -->
+                <a href="/mental-health.html#phq9" class="tool-card">
+                    <div class="tool-card-header mental-health">
+                        <div class="tool-icon">📋</div>
+                        <h3>PHQ-9 Depression Screening</h3>
+                    </div>
+                    <div class="tool-card-body">
+                        <p>The Patient Health Questionnaire-9 is a validated tool for screening depression severity. Studies show 42% of ACL patients develop depression—this tool helps you monitor your mental health.</p>
+                        <div class="tool-meta">
+                            <span class="tool-tag">9 Questions</span>
+                            <span class="tool-tag">~2 minutes</span>
+                            <span class="tool-tag">Validated</span>
+                        </div>
+                        <span class="tool-cta">Take PHQ-9 Assessment →</span>
+                    </div>
+                </a>
+
+                <!-- GAD-7 -->
+                <a href="/tools/gad7.html" class="tool-card">
+                    <div class="tool-card-header mental-health">
+                        <div class="tool-icon">😰</div>
+                        <h3>GAD-7 Anxiety Screening</h3>
+                    </div>
+                    <div class="tool-card-body">
+                        <p>The Generalized Anxiety Disorder 7-item scale screens for anxiety symptoms. Anxiety about reinjury, return to sport, and recovery progress is extremely common after ACL surgery.</p>
+                        <div class="tool-meta">
+                            <span class="tool-tag">7 Questions</span>
+                            <span class="tool-tag">~2 minutes</span>
+                            <span class="tool-tag">Validated</span>
+                        </div>
+                        <span class="tool-cta">Take GAD-7 Assessment →</span>
+                    </div>
+                </a>
+            </div>
+
+            <h2 style="margin-top: var(--spacing-2xl);">Psychological Readiness Tools</h2>
+            <div class="tools-grid">
+                <!-- ACL-RSI -->
+                <a href="/tools/acl-rsi.html" class="tool-card">
+                    <div class="tool-card-header psychological">
+                        <div class="tool-icon">🎯</div>
+                        <h3>ACL-RSI Scale</h3>
+                    </div>
+                    <div class="tool-card-body">
+                        <p>The ACL-Return to Sport after Injury scale measures your psychological readiness to return to sport. Scores ≥65 correlate with successful return. 76% of non-returners cite fear as the barrier.</p>
+                        <div class="tool-meta">
+                            <span class="tool-tag">12 Questions</span>
+                            <span class="tool-tag">~3 minutes</span>
+                            <span class="tool-tag">Sport-Specific</span>
+                        </div>
+                        <span class="tool-cta">Take ACL-RSI Assessment →</span>
+                    </div>
+                </a>
+
+                <!-- TSK -->
+                <div class="tool-card coming-soon" style="pointer-events: none;">
+                    <div class="tool-card-header psychological">
+                        <div class="tool-icon">😨</div>
+                        <h3>Tampa Scale of Kinesiophobia</h3>
+                    </div>
+                    <div class="tool-card-body">
+                        <p>Measures fear of movement and reinjury. High kinesiophobia scores are associated with poorer recovery outcomes and delayed return to sport.</p>
+                        <div class="tool-meta">
+                            <span class="tool-tag">17 Questions</span>
+                            <span class="tool-tag">~4 minutes</span>
+                            <span class="tool-tag">Fear Assessment</span>
+                        </div>
+                        <span class="tool-cta">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: var(--spacing-2xl);">Progress Tracking Tools</h2>
+            <div class="tools-grid">
+                <!-- Recovery Checklist -->
+                <a href="/tools/return-to-sport-checklist.html" class="tool-card">
+                    <div class="tool-card-header physical">
+                        <div class="tool-icon">✅</div>
+                        <h3>Return-to-Sport Checklist</h3>
+                    </div>
+                    <div class="tool-card-body">
+                        <p>Comprehensive checklist of criteria you should meet before returning to sport. Includes strength, ROM, functional tests, and psychological readiness benchmarks.</p>
+                        <div class="tool-meta">
+                            <span class="tool-tag">Multi-Criteria</span>
+                            <span class="tool-tag">Evidence-Based</span>
+                            <span class="tool-tag">Interactive</span>
+                        </div>
+                        <span class="tool-cta">View Checklist →</span>
+                    </div>
+                </a>
+
+                <!-- Milestone Tracker -->
+                <div class="tool-card coming-soon" style="pointer-events: none;">
+                    <div class="tool-card-header physical">
+                        <div class="tool-icon">📈</div>
+                        <h3>Recovery Milestone Tracker</h3>
+                    </div>
+                    <div class="tool-card-body">
+                        <p>Track your progress through key recovery milestones. Log ROM measurements, strength gains, and functional achievements over time.</p>
+                        <div class="tool-meta">
+                            <span class="tool-tag">Progress Tracking</span>
+                            <span class="tool-tag">Visualization</span>
+                            <span class="tool-tag">Export Data</span>
+                        </div>
+                        <span class="tool-cta">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Note -->
+            <div class="privacy-note">
+                <h3>🔒 Your Privacy is Protected</h3>
+                <p>All assessment data is stored <strong>only on your device</strong> using browser localStorage. Your responses are never sent to any server, never shared with third parties, and never used for any purpose other than showing you your results. You can clear your data at any time by clearing your browser data.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section style="background: var(--bg-secondary); padding: var(--spacing-2xl) 0; text-align: center;">
+        <div class="container">
+            <h2>Need Support Right Now?</h2>
+            <p style="max-width: 600px; margin: 0 auto var(--spacing-lg);">If you're struggling with your mental health during recovery, you're not alone. Professional support is available.</p>
+            <a href="/crisis-resources.html" class="btn btn-primary">Crisis Resources & Support</a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+</body>
+</html>
