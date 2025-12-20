@@ -182,6 +182,27 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://aclheal.com/exercises/leg-press.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/exercises/calf-raises.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/exercises/nordic-curls.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Tools & Assessments -->
     <url>
         <loc>https://aclheal.com/tools/</loc>
@@ -249,6 +270,13 @@
 
     <url>
         <loc>https://aclheal.com/guides/allograft.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/guides/prehab.html</loc>
         <lastmod>2024-12-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
