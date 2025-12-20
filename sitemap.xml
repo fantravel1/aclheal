@@ -385,6 +385,34 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://aclheal.com/exercises/squats.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/exercises/deadlift.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/exercises/patellar-mobilization.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/exercises/walking-gait.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Tools & Assessments -->
     <url>
         <loc>https://aclheal.com/tools/</loc>
