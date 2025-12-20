@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
+    <title>Return-to-Sport Checklist | ACL Clearance Criteria | ACL Heal</title>
+    <meta name="title" content="Return-to-Sport Checklist | ACL Clearance Criteria | ACL Heal">
+    <meta name="description" content="Comprehensive return-to-sport checklist for ACL recovery. Evidence-based criteria including strength, ROM, functional tests, and psychological readiness benchmarks.">
+    <meta name="keywords" content="return to sport, ACL clearance, ACL testing, hop test, limb symmetry index, ACL criteria, sports clearance">
+    <meta name="author" content="Nolan Ambrosino">
+    <link rel="canonical" href="https://aclheal.com/tools/return-to-sport-checklist.html">
+
+    <!-- Favicon & Stylesheets -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/mobile-enhanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .checklist-hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+        }
+        .checklist-hero h1 { color: white; margin-bottom: var(--spacing-sm); }
+        .checklist-hero p { color: rgba(255, 255, 255, 0.95); max-width: 700px; margin: 0 auto; }
+
+        .checklist-content { padding: var(--spacing-xl) 0; }
+
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent-color);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            border-radius: var(--border-radius);
+        }
+        .warning-box h3 { color: #92400e; margin-bottom: var(--spacing-sm); }
+        .warning-box p { color: #78350f; margin: 0; }
+
+        .progress-summary {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+        .progress-bar-container {
+            background: #e5e7eb;
+            border-radius: 10px;
+            height: 20px;
+            margin: var(--spacing-md) 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        .progress-text { font-size: 1.25rem; font-weight: 600; color: var(--text-primary); }
+
+        .checklist-section {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-lg);
+            overflow: hidden;
+        }
+        .section-header {
+            padding: var(--spacing-md) var(--spacing-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .section-header:hover { background: var(--bg-secondary); }
+        .section-header.time { background: linear-gradient(90deg, #dbeafe 0%, #eff6ff 100%); }
+        .section-header.rom { background: linear-gradient(90deg, #d1fae5 0%, #ecfdf5 100%); }
+        .section-header.strength { background: linear-gradient(90deg, #fef3c7 0%, #fffbeb 100%); }
+        .section-header.functional { background: linear-gradient(90deg, #e0e7ff 0%, #eef2ff 100%); }
+        .section-header.psychological { background: linear-gradient(90deg, #f3e8ff 0%, #faf5ff 100%); }
+        .section-header.clinical { background: linear-gradient(90deg, #fee2e2 0%, #fef2f2 100%); }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        .section-icon { font-size: 1.5rem; }
+        .section-title h2 { margin: 0; font-size: 1.1rem; }
+        .section-progress {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        .section-progress .count { font-weight: 600; }
+        .chevron { transition: transform 0.3s; }
+        .section-header.open .chevron { transform: rotate(180deg); }
+
+        .section-content {
+            display: none;
+            padding: var(--spacing-lg);
+            border-top: 1px solid var(--border-color);
+        }
+        .section-content.open { display: block; }
+
+        .checklist-item {
+            display: flex;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-sm);
+            transition: background 0.2s;
+        }
+        .checklist-item:hover { background: var(--bg-secondary); }
+        .checklist-item.checked { background: #d1fae5; }
+
+        .checkbox-wrapper {
+            flex-shrink: 0;
+        }
+        .checkbox-wrapper input {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: var(--secondary-color);
+        }
+
+        .item-content { flex: 1; }
+        .item-title { font-weight: 500; margin-bottom: var(--spacing-xs); }
+        .item-description { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: var(--spacing-xs); }
+        .item-benchmark {
+            font-size: 0.85rem;
+            background: var(--bg-tertiary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .info-note {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary-color);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+        }
+
+        .action-section {
+            background: var(--bg-secondary);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: var(--spacing-xl);
+        }
+        .action-section h2 { margin-bottom: var(--spacing-md); }
+        .action-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media print {
+            .checklist-hero, .action-section, .warning-box { display: none; }
+            .section-content { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="checklist-hero">
+        <div class="container">
+            <h1>Return-to-Sport Checklist</h1>
+            <p>Evidence-based criteria to help you and your healthcare team determine when you're ready to return to sport after ACL reconstruction. Meeting these benchmarks reduces reinjury risk.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="checklist-content">
+        <div class="container" style="max-width: 900px;">
+            <!-- Warning -->
+            <div class="warning-box">
+                <h3>Important Disclaimer</h3>
+                <p>This checklist is for <strong>educational purposes only</strong> and should not replace professional medical evaluation. Final clearance for return to sport must come from your surgeon or physical therapist who can perform objective testing. Many of these tests require professional administration.</p>
+            </div>
+
+            <!-- Progress Summary -->
+            <div class="progress-summary">
+                <div class="progress-text"><span id="completed-count">0</span> of <span id="total-count">24</span> criteria met</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">Track your progress as you work toward return-to-sport clearance</p>
+            </div>
+
+            <!-- Time-Based Criteria -->
+            <div class="checklist-section">
+                <div class="section-header time" onclick="toggleSection(this)">
+                    <div class="section-title">
+                        <span class="section-icon">⏱️</span>
+                        <h2>Time-Based Criteria</h2>
+                    </div>
+                    <div class="section-progress">
+                        <span class="count" data-section="time">0/2</span>
+                        <span class="chevron">▼</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-section="time">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="time-1" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="time-1" class="item-title">Minimum 9 months post-surgery</label>
+                            <p class="item-description">Research shows graft maturation and remodeling takes at least 9 months. Earlier return significantly increases reinjury risk.</p>
+                            <span class="item-benchmark">Benchmark: ≥9 months from surgery date</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="time">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="time-2" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="time-2" class="item-title">Completed progressive return-to-sport program</label>
+                            <p class="item-description">Structured progression through running, agility, plyometrics, and sport-specific training over several months.</p>
+                            <span class="item-benchmark">Benchmark: 8-12 weeks of sport-specific training</span>
+                        </div>
+                    </div>
+                    <div class="info-note">
+                        <strong>Note:</strong> Time alone is not sufficient for clearance. All functional and strength criteria must also be met. Some research suggests waiting 12+ months reduces reinjury risk further.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Range of Motion -->
+            <div class="checklist-section">
+                <div class="section-header rom" onclick="toggleSection(this)">
+                    <div class="section-title">
+                        <span class="section-icon">📐</span>
+                        <h2>Range of Motion</h2>
+                    </div>
+                    <div class="section-progress">
+                        <span class="count" data-section="rom">0/2</span>
+                        <span class="chevron">▼</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-section="rom">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="rom-1" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="rom-1" class="item-title">Full knee extension (0°)</label>
+                            <p class="item-description">Surgical leg matches non-surgical leg for full straightening. Any extension deficit increases stress on the graft.</p>
+                            <span class="item-benchmark">Benchmark: 0° extension, matching opposite leg</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="rom">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="rom-2" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="rom-2" class="item-title">Full knee flexion</label>
+                            <p class="item-description">Surgical leg matches non-surgical leg for full bending. Should be within 5° of opposite side.</p>
+                            <span class="item-benchmark">Benchmark: Within 5° of non-surgical leg (typically 135-145°)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strength Testing -->
+            <div class="checklist-section">
+                <div class="section-header strength" onclick="toggleSection(this)">
+                    <div class="section-title">
+                        <span class="section-icon">💪</span>
+                        <h2>Strength Testing (Limb Symmetry Index)</h2>
+                    </div>
+                    <div class="section-progress">
+                        <span class="count" data-section="strength">0/4</span>
+                        <span class="chevron">▼</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-section="strength">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="strength-1" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="strength-1" class="item-title">Quadriceps strength LSI ≥90%</label>
+                            <p class="item-description">Isokinetic or isometric quad strength on surgical leg is at least 90% of non-surgical leg.</p>
+                            <span class="item-benchmark">Benchmark: LSI ≥90% (some advocate for ≥95%)</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="strength">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="strength-2" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="strength-2" class="item-title">Hamstring strength LSI ≥90%</label>
+                            <p class="item-description">Isokinetic or isometric hamstring strength on surgical leg is at least 90% of non-surgical leg.</p>
+                            <span class="item-benchmark">Benchmark: LSI ≥90%</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="strength">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="strength-3" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="strength-3" class="item-title">Hip abductor strength LSI ≥90%</label>
+                            <p class="item-description">Hip abductor strength is critical for knee stability during cutting and pivoting movements.</p>
+                            <span class="item-benchmark">Benchmark: LSI ≥90%</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="strength">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="strength-4" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="strength-4" class="item-title">Single-leg squat quality</label>
+                            <p class="item-description">Can perform single-leg squat to 60° with good form (no knee valgus, trunk stable).</p>
+                            <span class="item-benchmark">Benchmark: Good quality movement without compensation</span>
+                        </div>
+                    </div>
+                    <div class="info-note">
+                        <strong>Testing Note:</strong> Isokinetic dynamometry is the gold standard for strength testing. Manual muscle testing is less reliable. Ask your PT about objective strength testing.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Functional/Hop Testing -->
+            <div class="checklist-section">
+                <div class="section-header functional" onclick="toggleSection(this)">
+                    <div class="section-title">
+                        <span class="section-icon">🦘</span>
+                        <h2>Functional Hop Testing</h2>
+                    </div>
+                    <div class="section-progress">
+                        <span class="count" data-section="functional">0/6</span>
+                        <span class="chevron">▼</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-section="functional">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="hop-1" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="hop-1" class="item-title">Single-leg hop for distance LSI ≥90%</label>
+                            <p class="item-description">Maximum single-leg hop distance. Surgical leg achieves at least 90% of non-surgical leg distance.</p>
+                            <span class="item-benchmark">Benchmark: LSI ≥90%</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="functional">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="hop-2" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="hop-2" class="item-title">Triple hop for distance LSI ≥90%</label>
+                            <p class="item-description">Three consecutive hops for maximum distance. Tests power endurance.</p>
+                            <span class="item-benchmark">Benchmark: LSI ≥90%</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="functional">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="hop-3" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="hop-3" class="item-title">Crossover hop for distance LSI ≥90%</label>
+                            <p class="item-description">Three hops crossing back and forth over a line. Tests frontal plane control.</p>
+                            <span class="item-benchmark">Benchmark: LSI ≥90%</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="functional">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="hop-4" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="hop-4" class="item-title">6-meter timed hop LSI ≥90%</label>
+                            <p class="item-description">Time to hop 6 meters on one leg. Surgical leg time within 10% of non-surgical leg.</p>
+                            <span class="item-benchmark">Benchmark: LSI ≥90% (lower time = better)</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="functional">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="hop-5" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="hop-5" class="item-title">Y-Balance Test (anterior reach) LSI ≥90%</label>
+                            <p class="item-description">Single-leg balance with reach in anterior direction. Tests dynamic balance and stability.</p>
+                            <span class="item-benchmark">Benchmark: LSI ≥90%</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="functional">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="hop-6" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="hop-6" class="item-title">Side hop test (30 seconds) LSI ≥90%</label>
+                            <p class="item-description">Number of side-to-side hops over a line in 30 seconds. Tests reactive stability.</p>
+                            <span class="item-benchmark">Benchmark: LSI ≥90%</span>
+                        </div>
+                    </div>
+                    <div class="info-note">
+                        <strong>Important:</strong> Hop tests should be performed under professional supervision with proper warm-up. Quality of movement matters as much as symmetry—watch for compensation patterns.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Psychological Readiness -->
+            <div class="checklist-section">
+                <div class="section-header psychological" onclick="toggleSection(this)">
+                    <div class="section-title">
+                        <span class="section-icon">🧠</span>
+                        <h2>Psychological Readiness</h2>
+                    </div>
+                    <div class="section-progress">
+                        <span class="count" data-section="psychological">0/4</span>
+                        <span class="chevron">▼</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-section="psychological">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="psych-1" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="psych-1" class="item-title">ACL-RSI score ≥65</label>
+                            <p class="item-description">ACL-Return to Sport after Injury scale score of 65 or higher correlates with successful return.</p>
+                            <span class="item-benchmark">Benchmark: Score ≥65 (take assessment <a href="/tools/acl-rsi.html">here</a>)</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="psychological">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="psych-2" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="psych-2" class="item-title">Low fear of reinjury during sport activities</label>
+                            <p class="item-description">Can participate in sport-specific drills without significant fear or hesitation.</p>
+                            <span class="item-benchmark">Benchmark: Minimal avoidance behavior during training</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="psychological">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="psych-3" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="psych-3" class="item-title">Confidence in knee during cutting/pivoting</label>
+                            <p class="item-description">Feel confident in your knee's ability to handle the demands of your sport.</p>
+                            <span class="item-benchmark">Benchmark: High confidence on self-report</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="psychological">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="psych-4" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="psych-4" class="item-title">No significant depression or anxiety symptoms</label>
+                            <p class="item-description">Mental health is stable and not interfering with recovery or sport participation.</p>
+                            <span class="item-benchmark">Benchmark: PHQ-9 &lt;10, GAD-7 &lt;10</span>
+                        </div>
+                    </div>
+                    <div class="info-note">
+                        <strong>Remember:</strong> 76% of athletes who don't return to sport cite fear as the primary barrier—not physical limitations. Addressing psychological readiness is essential.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clinical Criteria -->
+            <div class="checklist-section">
+                <div class="section-header clinical" onclick="toggleSection(this)">
+                    <div class="section-title">
+                        <span class="section-icon">⚕️</span>
+                        <h2>Clinical Criteria</h2>
+                    </div>
+                    <div class="section-progress">
+                        <span class="count" data-section="clinical">0/6</span>
+                        <span class="chevron">▼</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="checklist-item" data-section="clinical">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="clinical-1" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="clinical-1" class="item-title">No knee effusion (swelling)</label>
+                            <p class="item-description">Knee is not swollen at rest or after activity. Persistent swelling indicates ongoing issues.</p>
+                            <span class="item-benchmark">Benchmark: Trace or no effusion on clinical exam</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="clinical">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="clinical-2" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="clinical-2" class="item-title">Stable knee on clinical examination</label>
+                            <p class="item-description">Negative Lachman test and pivot shift. Graft is intact and functioning.</p>
+                            <span class="item-benchmark">Benchmark: Stable on ligament testing</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="clinical">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="clinical-3" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="clinical-3" class="item-title">No pain during sport-specific activities</label>
+                            <p class="item-description">Can perform running, cutting, jumping without pain in the knee.</p>
+                            <span class="item-benchmark">Benchmark: Pain-free during all activities</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="clinical">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="clinical-4" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="clinical-4" class="item-title">Surgeon clearance obtained</label>
+                            <p class="item-description">Your surgeon has evaluated you and given clearance for return to sport.</p>
+                            <span class="item-benchmark">Benchmark: Written or verbal clearance from surgeon</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="clinical">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="clinical-5" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="clinical-5" class="item-title">Physical therapist clearance obtained</label>
+                            <p class="item-description">Your PT has performed functional testing and recommends return to sport.</p>
+                            <span class="item-benchmark">Benchmark: PT discharge or clearance for sport</span>
+                        </div>
+                    </div>
+                    <div class="checklist-item" data-section="clinical">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="clinical-6" onchange="updateProgress()">
+                        </div>
+                        <div class="item-content">
+                            <label for="clinical-6" class="item-title">Completed graduated return-to-sport protocol</label>
+                            <p class="item-description">Successfully completed progressive return through practice to game situations.</p>
+                            <span class="item-benchmark">Benchmark: Full participation in practice for 2+ weeks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Section -->
+            <div class="action-section">
+                <h2>Ready to Discuss Clearance?</h2>
+                <p>Print or save this checklist to bring to your next appointment with your surgeon or physical therapist.</p>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="window.print()">Print Checklist</button>
+                    <button class="btn btn-secondary" onclick="saveProgress()">Save Progress</button>
+                    <button class="btn btn-secondary" onclick="resetChecklist()">Reset Checklist</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+
+    <script>
+        function toggleSection(header) {
+            header.classList.toggle('open');
+            header.nextElementSibling.classList.toggle('open');
+        }
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const total = checkboxes.length;
+            const percentage = Math.round((checked / total) * 100);
+
+            document.getElementById('completed-count').textContent = checked;
+            document.getElementById('total-count').textContent = total;
+            document.getElementById('progress-bar').style.width = percentage + '%';
+
+            // Update section counts
+            const sections = ['time', 'rom', 'strength', 'functional', 'psychological', 'clinical'];
+            sections.forEach(section => {
+                const sectionItems = document.querySelectorAll(`.checklist-item[data-section="${section}"] input`);
+                const sectionChecked = document.querySelectorAll(`.checklist-item[data-section="${section}"] input:checked`).length;
+                const countEl = document.querySelector(`.count[data-section="${section}"]`);
+                if (countEl) {
+                    countEl.textContent = `${sectionChecked}/${sectionItems.length}`;
+                }
+            });
+
+            // Update item styling
+            checkboxes.forEach(cb => {
+                const item = cb.closest('.checklist-item');
+                if (cb.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+
+            // Auto-save
+            saveProgress();
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const state = {};
+            checkboxes.forEach(cb => {
+                state[cb.id] = cb.checked;
+            });
+            localStorage.setItem('rts_checklist', JSON.stringify(state));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('rts_checklist');
+            if (saved) {
+                const state = JSON.parse(saved);
+                Object.keys(state).forEach(id => {
+                    const cb = document.getElementById(id);
+                    if (cb) cb.checked = state[id];
+                });
+                updateProgress();
+            }
+        }
+
+        function resetChecklist() {
+            if (confirm('Are you sure you want to reset all checkboxes?')) {
+                document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+                localStorage.removeItem('rts_checklist');
+                updateProgress();
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

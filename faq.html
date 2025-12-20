@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
+    <title>ACL Recovery FAQ | Frequently Asked Questions | ACL Heal</title>
+    <meta name="title" content="ACL Recovery FAQ | Frequently Asked Questions | ACL Heal">
+    <meta name="description" content="Answers to the most common questions about ACL surgery, recovery timeline, return to sport, and mental health during rehabilitation.">
+    <meta name="keywords" content="ACL FAQ, ACL surgery questions, ACL recovery questions, ACL timeline, when can I return to sport, ACL reinjury">
+    <meta name="author" content="Nolan Ambrosino">
+    <link rel="canonical" href="https://aclheal.com/faq.html">
+
+    <!-- Favicon & Stylesheets -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/mobile-enhanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long does ACL recovery take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Full ACL recovery typically takes 9-12 months, though some athletes require up to 2 years to feel fully confident. Return to sport is generally considered at 9+ months post-surgery, provided you meet specific strength and functional criteria."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When can I return to sport after ACL surgery?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most surgeons recommend waiting at least 9 months before returning to cutting/pivoting sports. However, time alone isn't sufficient—you must also pass functional testing (hop tests, strength testing) and demonstrate psychological readiness. Some research suggests waiting 12+ months reduces reinjury risk."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the reinjury rate after ACL reconstruction?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Reinjury rates vary by age and graft type. Young athletes (<25 years) have approximately 15-25% risk of reinjury (to either knee). Returning before 9 months significantly increases this risk. Comprehensive rehabilitation and meeting return-to-sport criteria can reduce reinjury risk."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        .faq-hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+        }
+        .faq-hero h1 { color: white; margin-bottom: var(--spacing-sm); }
+        .faq-hero p { color: rgba(255, 255, 255, 0.95); max-width: 600px; margin: 0 auto; }
+
+        .faq-content { padding: var(--spacing-xl) 0; max-width: 900px; margin: 0 auto; }
+
+        .faq-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-md);
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+        }
+        .faq-nav a {
+            padding: 0.5rem 1rem;
+            background: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+        .faq-nav a:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+        .faq-category { margin-bottom: var(--spacing-2xl); }
+        .faq-category h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: var(--spacing-md) var(--spacing-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: background 0.2s;
+        }
+        .faq-question:hover { background: var(--bg-secondary); }
+        .faq-question h3 { margin: 0; font-size: 1rem; font-weight: 500; }
+        .faq-toggle { font-size: 1.25rem; color: var(--primary-color); transition: transform 0.3s; }
+        .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            display: none;
+            padding: var(--spacing-lg);
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+        .faq-item.open .faq-answer { display: block; }
+        .faq-answer p { margin-bottom: var(--spacing-sm); }
+        .faq-answer p:last-child { margin-bottom: 0; }
+        .faq-answer ul { margin: var(--spacing-md) 0; padding-left: var(--spacing-lg); }
+        .faq-answer li { margin-bottom: var(--spacing-xs); }
+        .faq-answer a { color: var(--primary-color); }
+
+        .search-box {
+            margin-bottom: var(--spacing-xl);
+        }
+        .search-box input {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Answers to the most common questions about ACL surgery, recovery, and return to sport.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="faq-content">
+        <div class="container">
+            <!-- Search -->
+            <div class="search-box">
+                <input type="text" id="faq-search" placeholder="Search questions..." onkeyup="filterFAQs()">
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="faq-nav">
+                <a href="#timeline">Timeline & Recovery</a>
+                <a href="#surgery">Surgery & Graft</a>
+                <a href="#rehab">Rehabilitation</a>
+                <a href="#return-sport">Return to Sport</a>
+                <a href="#mental-health">Mental Health</a>
+                <a href="#complications">Complications</a>
+            </div>
+
+            <!-- Timeline & Recovery -->
+            <section class="faq-category" id="timeline">
+                <h2>Timeline & Recovery</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How long does ACL recovery take?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Full recovery typically takes 9-12 months</strong>, though many athletes report feeling fully confident only at 18-24 months.</p>
+                        <p>Key milestones:</p>
+                        <ul>
+                            <li><strong>Weeks 0-6:</strong> Initial healing, ROM restoration, basic exercises</li>
+                            <li><strong>Weeks 6-12:</strong> Progressive strengthening, balance training</li>
+                            <li><strong>Months 3-6:</strong> Running, jumping, plyometrics introduced</li>
+                            <li><strong>Months 6-9:</strong> Sport-specific training, agility work</li>
+                            <li><strong>Months 9-12+:</strong> Return-to-sport testing, graduated return</li>
+                        </ul>
+                        <p><a href="/stages/weeks-0-2.html">View our detailed stage-by-stage guides →</a></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>When can I walk normally again?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most people walk <strong>without crutches by 2-4 weeks</strong> and with a normal gait by 6-8 weeks.</p>
+                        <p>This varies based on:</p>
+                        <ul>
+                            <li>Your surgeon's weight-bearing protocol</li>
+                            <li>Whether you had meniscus repair (may delay weight-bearing)</li>
+                            <li>Your pre-surgery strength and conditioning</li>
+                            <li>How quickly you regain quad control</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>When can I drive after ACL surgery?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Right leg surgery:</strong> Typically 4-6 weeks, when you can perform an emergency brake safely and are off opioid medications.</p>
+                        <p><strong>Left leg surgery:</strong> Often 1-2 weeks for automatic transmission vehicles, once you're off opioids and can safely operate the vehicle.</p>
+                        <p><strong>Important:</strong> Never drive while taking opioid pain medications. Check with your surgeon and insurance company for specific guidance.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Surgery & Graft -->
+            <section class="faq-category" id="surgery">
+                <h2>Surgery & Graft Type</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Which ACL graft is best?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>There is <strong>no single "best" graft</strong>—the right choice depends on your individual factors.</p>
+                        <p><strong>Patellar tendon (BTB):</strong> Strong, fast bone healing, but higher anterior knee pain risk. Often preferred for high-level athletes.</p>
+                        <p><strong>Hamstring:</strong> Less anterior knee pain, smaller incision, but potential hamstring weakness. Most common choice.</p>
+                        <p><strong>Quad tendon:</strong> Thick, strong graft. Good for larger patients and revisions.</p>
+                        <p><strong>Allograft:</strong> No donor site issues, but slower incorporation and higher rerupture rate in young athletes.</p>
+                        <p><a href="/guides/">View our graft-specific guides →</a></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do I need surgery for an ACL tear?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Not always. The decision depends on:</p>
+                        <ul>
+                            <li><strong>Activity level:</strong> High-level athletes in cutting/pivoting sports usually benefit from surgery</li>
+                            <li><strong>Knee instability:</strong> If your knee gives way during daily activities, surgery is typically recommended</li>
+                            <li><strong>Associated injuries:</strong> Meniscus tears often require surgical treatment</li>
+                            <li><strong>Age and goals:</strong> Older adults with lower activity demands may do well without surgery</li>
+                        </ul>
+                        <p>Discuss with an orthopedic surgeon who can evaluate your specific situation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rehabilitation -->
+            <section class="faq-category" id="rehab">
+                <h2>Rehabilitation</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What is the most important exercise after ACL surgery?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Quad sets</strong> are arguably the single most important early exercise. After surgery, your brain's connection to your quadriceps is disrupted (arthrogenic muscle inhibition). Quad sets help re-establish this connection.</p>
+                        <p>Other critical early exercises:</p>
+                        <ul>
+                            <li><strong>Passive knee extension:</strong> Maintaining full straightening is crucial</li>
+                            <li><strong>Heel slides:</strong> Restoring flexion range of motion</li>
+                            <li><strong>Ankle pumps:</strong> Preventing blood clots</li>
+                        </ul>
+                        <p><a href="/exercises/quad-sets.html">Learn proper quad set technique →</a></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How often should I do physical therapy?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Typical PT frequency:</p>
+                        <ul>
+                            <li><strong>Weeks 1-6:</strong> 2-3 times per week</li>
+                            <li><strong>Weeks 6-12:</strong> 2 times per week</li>
+                            <li><strong>Months 3-6:</strong> 1-2 times per week</li>
+                            <li><strong>Months 6+:</strong> Weekly or biweekly, progressing to monthly</li>
+                        </ul>
+                        <p>Home exercises should be done daily or as prescribed. Your PT visits are for progression, hands-on treatment, and ensuring proper form—not your only exercise time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Can I do too much during ACL recovery?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Yes.</strong> Overdoing it can lead to increased swelling, pain, and potentially damage to the healing graft.</p>
+                        <p>Signs you're doing too much:</p>
+                        <ul>
+                            <li>Increased swelling after activity</li>
+                            <li>Pain that lasts more than 24 hours after exercise</li>
+                            <li>Regression in ROM or strength</li>
+                            <li>Sleep disturbance due to pain</li>
+                        </ul>
+                        <p>Follow your protocol and listen to your body. "No pain, no gain" does NOT apply to ACL recovery.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Return to Sport -->
+            <section class="faq-category" id="return-sport">
+                <h2>Return to Sport</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>When can I return to sport after ACL surgery?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Most surgeons recommend waiting at least 9 months</strong> before returning to cutting/pivoting sports, though some research suggests 12+ months may be safer.</p>
+                        <p>Time alone isn't sufficient. You must also:</p>
+                        <ul>
+                            <li>Pass functional testing (hop tests with ≥90% limb symmetry)</li>
+                            <li>Meet strength criteria (quad/hamstring LSI ≥90%)</li>
+                            <li>Demonstrate psychological readiness (ACL-RSI ≥65)</li>
+                            <li>Complete sport-specific training program</li>
+                            <li>Receive clearance from your surgeon and PT</li>
+                        </ul>
+                        <p><a href="/tools/return-to-sport-checklist.html">View complete return-to-sport checklist →</a></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What is the reinjury rate after ACL reconstruction?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Reinjury rates vary significantly:</p>
+                        <ul>
+                            <li><strong>Young athletes (&lt;25):</strong> 15-25% risk of ACL injury to either knee</li>
+                            <li><strong>Older patients:</strong> Lower reinjury rates</li>
+                            <li><strong>Return before 9 months:</strong> Significantly higher risk</li>
+                            <li><strong>Allograft in young athletes:</strong> Higher rerupture rate than autografts</li>
+                        </ul>
+                        <p>Factors that reduce reinjury risk: waiting ≥9 months, meeting strength criteria, completing neuromuscular training, and ongoing injury prevention exercises.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>When can I run after ACL surgery?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Running typically begins at 12-16 weeks</strong>, but only when you meet specific criteria:</p>
+                        <ul>
+                            <li>Full, pain-free range of motion</li>
+                            <li>No swelling</li>
+                            <li>Good quad control and strength</li>
+                            <li>Normal walking gait</li>
+                            <li>Clearance from your PT/surgeon</li>
+                        </ul>
+                        <p>Running progression starts with walk-jog intervals on flat surfaces, gradually increasing duration and intensity.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mental Health -->
+            <section class="faq-category" id="mental-health">
+                <h2>Mental Health</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Is it normal to feel depressed after ACL surgery?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Yes, very normal.</strong> Research shows <strong>42% of ACL patients develop depression</strong> during recovery. This is a recognized medical phenomenon, not a character flaw.</p>
+                        <p>Contributing factors:</p>
+                        <ul>
+                            <li>Loss of athletic identity and team connection</li>
+                            <li>Physical limitations and dependence on others</li>
+                            <li>Uncertainty about the future</li>
+                            <li>Social isolation</li>
+                            <li>Sleep disruption and pain</li>
+                        </ul>
+                        <p>If you're struggling, please seek support. <a href="/mental-health.html">Mental health resources →</a></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How do I deal with fear of reinjury?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Fear of reinjury is the <strong>#1 reason athletes don't return to sport</strong> (76% cite fear as the barrier).</p>
+                        <p>Evidence-based strategies:</p>
+                        <ul>
+                            <li><strong>Graduated exposure:</strong> Progressive return to challenging movements</li>
+                            <li><strong>Visualization:</strong> Mentally rehearse successful performance</li>
+                            <li><strong>Building confidence through mastery:</strong> Meeting physical milestones</li>
+                            <li><strong>Sports psychology:</strong> Working with a mental performance specialist</li>
+                            <li><strong>Peer support:</strong> Connecting with others who've been through it</li>
+                        </ul>
+                        <p><a href="/tools/acl-rsi.html">Take the ACL-RSI assessment →</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Complications -->
+            <section class="faq-category" id="complications">
+                <h2>Complications & Concerns</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What are warning signs of complications?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Call your surgeon immediately if you experience:</strong></p>
+                        <ul>
+                            <li>Fever over 101.5°F (38.6°C)</li>
+                            <li>Increasing redness, warmth, or swelling around incisions</li>
+                            <li>Pus or foul-smelling drainage</li>
+                            <li>Sudden severe calf pain (possible blood clot)</li>
+                            <li>Chest pain or difficulty breathing</li>
+                            <li>Increasing pain after initial improvement</li>
+                            <li>Inability to straighten your knee</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Is knee pain normal after ACL surgery?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Some pain is normal, especially in the first few weeks. The pattern matters:</p>
+                        <ul>
+                            <li><strong>Days 2-4:</strong> Peak pain as nerve block wears off—normal</li>
+                            <li><strong>Week 1-2:</strong> Gradual improvement expected</li>
+                            <li><strong>After week 2:</strong> Should be manageable with OTC medications</li>
+                        </ul>
+                        <p><strong>Concerning pain patterns:</strong></p>
+                        <ul>
+                            <li>Pain that worsens after initially improving</li>
+                            <li>Severe pain that's not controlled by medications</li>
+                            <li>New sharp pain, especially with specific movements</li>
+                            <li>Pain accompanied by swelling, redness, or warmth</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+
+    <script>
+        function toggleFAQ(element) {
+            const item = element.parentElement;
+            item.classList.toggle('open');
+        }
+
+        function filterFAQs() {
+            const search = document.getElementById('faq-search').value.toLowerCase();
+            const items = document.querySelectorAll('.faq-item');
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(search) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

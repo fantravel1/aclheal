@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
+    <title>ACL-RSI Psychological Readiness Scale | Return to Sport Assessment | ACL Heal</title>
+    <meta name="title" content="ACL-RSI Psychological Readiness Scale | Return to Sport Assessment | ACL Heal">
+    <meta name="description" content="Free ACL-RSI assessment to measure your psychological readiness to return to sport after ACL reconstruction. Scores above 65 correlate with successful return.">
+    <meta name="keywords" content="ACL-RSI, return to sport, psychological readiness, ACL recovery, fear of reinjury, sports psychology, ACL assessment">
+    <meta name="author" content="Nolan Ambrosino">
+    <link rel="canonical" href="https://aclheal.com/tools/acl-rsi.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aclheal.com/tools/acl-rsi.html">
+    <meta property="og:title" content="ACL-RSI Scale | Psychological Readiness for Return to Sport">
+    <meta property="og:description" content="Are you psychologically ready to return to sport? Take the validated ACL-RSI assessment to find out.">
+    <meta property="og:site_name" content="ACL Heal">
+
+    <!-- Favicon & Stylesheets -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/mobile-enhanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .screening-hero {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+            color: white;
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+        }
+        .screening-hero h1 { color: white; margin-bottom: var(--spacing-sm); }
+        .screening-hero p { color: rgba(255, 255, 255, 0.95); max-width: 700px; margin: 0 auto; }
+
+        .screening-content { padding: var(--spacing-xl) 0; max-width: 900px; margin: 0 auto; }
+
+        .info-box {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary-color);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            border-radius: var(--border-radius);
+        }
+        .info-box h3 { color: var(--primary-color); margin-bottom: var(--spacing-sm); }
+        .info-box p { margin: 0; font-size: 0.95rem; }
+
+        .disclaimer-box {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent-color);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            border-radius: var(--border-radius);
+        }
+        .disclaimer-box p { color: #78350f; margin: 0; font-size: 0.9rem; }
+
+        .questionnaire {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .question-intro {
+            background: var(--bg-secondary);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-xl);
+        }
+        .question-intro h3 { margin-bottom: var(--spacing-sm); color: var(--text-primary); }
+        .question-intro p { margin: 0; }
+
+        .question {
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .question:last-of-type { border-bottom: none; }
+
+        .question-text {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: flex-start;
+        }
+        .question-number {
+            background: #8b5cf6;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .slider-container {
+            padding: 0 var(--spacing-md);
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .slider-wrapper {
+            position: relative;
+            height: 40px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, #ef4444 0%, #f59e0b 50%, #10b981 100%);
+            outline: none;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #8b5cf6;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #8b5cf6;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .slider-value {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #8b5cf6;
+            margin-top: var(--spacing-sm);
+        }
+
+        .slider-ticks {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        .submit-section {
+            text-align: center;
+            margin-top: var(--spacing-xl);
+        }
+        .submit-btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .submit-btn:hover { background: #7c3aed; transform: translateY(-2px); }
+
+        .results {
+            display: none;
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        .results.low { background: #fee2e2; border: 2px solid #ef4444; }
+        .results.moderate { background: #fef3c7; border: 2px solid #f59e0b; }
+        .results.high { background: #d1fae5; border: 2px solid #10b981; }
+
+        .score-display {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+        .results.low .score-display { color: #dc2626; }
+        .results.moderate .score-display { color: #d97706; }
+        .results.high .score-display { color: #059669; }
+
+        .score-label { font-size: 1rem; color: var(--text-secondary); margin-bottom: var(--spacing-md); }
+
+        .readiness-label {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .score-gauge {
+            max-width: 400px;
+            margin: var(--spacing-lg) auto;
+            height: 20px;
+            background: linear-gradient(to right, #ef4444 0%, #f59e0b 50%, #10b981 100%);
+            border-radius: 10px;
+            position: relative;
+        }
+        .gauge-marker {
+            position: absolute;
+            top: -8px;
+            width: 4px;
+            height: 36px;
+            background: #1f2937;
+            border-radius: 2px;
+            transform: translateX(-50%);
+        }
+        .gauge-labels {
+            display: flex;
+            justify-content: space-between;
+            max-width: 400px;
+            margin: var(--spacing-xs) auto 0;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        .threshold-marker {
+            position: absolute;
+            top: -30px;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            transform: translateX(-50%);
+        }
+
+        .results-interpretation {
+            text-align: left;
+            background: rgba(255,255,255,0.7);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-lg);
+        }
+        .results-interpretation h3 { margin-bottom: var(--spacing-sm); }
+        .results-interpretation ul { margin: var(--spacing-md) 0; padding-left: var(--spacing-lg); }
+        .results-interpretation li { margin-bottom: var(--spacing-sm); }
+
+        .action-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            margin-top: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .category-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        .category-header {
+            background: #f3e8ff;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-lg);
+        }
+        .category-header h3 { margin: 0; color: #6b21a8; font-size: 1rem; }
+
+        .privacy-reminder {
+            background: #eff6ff;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-xl);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="screening-hero">
+        <div class="container">
+            <h1>ACL-RSI Scale</h1>
+            <p>The ACL-Return to Sport after Injury (ACL-RSI) scale measures your psychological readiness to return to sport. Research shows scores ≥65 correlate with successful return to pre-injury activity levels.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="screening-content">
+        <div class="container">
+            <!-- Info Box -->
+            <div class="info-box">
+                <h3>Why Psychological Readiness Matters</h3>
+                <p><strong>76% of ACL patients</strong> who don't return to their pre-injury sport level cite <strong>fear</strong> as the primary reason—not physical limitations. Your psychological readiness is just as important as your physical recovery. This validated 12-question assessment helps identify areas where you may benefit from additional support.</p>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer-box">
+                <p><strong>Important:</strong> This is a self-assessment tool for informational purposes only. Results should be discussed with your healthcare team. Your responses are stored only on your device and never transmitted to any server.</p>
+            </div>
+
+            <!-- Questionnaire -->
+            <form class="questionnaire" id="aclrsi-form">
+                <div class="question-intro">
+                    <h3>Instructions</h3>
+                    <p>For each question, move the slider to indicate how you currently feel about your knee, from 0 (extremely negative) to 100 (extremely positive). There are no right or wrong answers—be honest about how you feel.</p>
+                </div>
+
+                <!-- Category: Emotions -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <h3>Section A: Emotions</h3>
+                    </div>
+
+                    <div class="question" data-question="1">
+                        <div class="question-text">
+                            <span class="question-number">1</span>
+                            <span>Are you nervous about playing your sport?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Extremely nervous</span>
+                                <span>Not nervous at all</span>
+                            </div>
+                            <input type="range" id="q1" name="q1" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q1-value">50</span></div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="2">
+                        <div class="question-text">
+                            <span class="question-number">2</span>
+                            <span>Do you find it frustrating to have to consider your knee with respect to your sport?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Extremely frustrated</span>
+                                <span>Not frustrated at all</span>
+                            </div>
+                            <input type="range" id="q2" name="q2" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q2-value">50</span></div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="3">
+                        <div class="question-text">
+                            <span class="question-number">3</span>
+                            <span>Do you feel relaxed about playing your sport?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Not relaxed at all</span>
+                                <span>Completely relaxed</span>
+                            </div>
+                            <input type="range" id="q3" name="q3" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q3-value">50</span></div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="4">
+                        <div class="question-text">
+                            <span class="question-number">4</span>
+                            <span>Are you afraid of accidentally injuring your knee by playing your sport?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Extremely afraid</span>
+                                <span>Not afraid at all</span>
+                            </div>
+                            <input type="range" id="q4" name="q4" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q4-value">50</span></div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="5">
+                        <div class="question-text">
+                            <span class="question-number">5</span>
+                            <span>Are you afraid of re-injuring your knee by playing your sport?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Extremely afraid</span>
+                                <span>Not afraid at all</span>
+                            </div>
+                            <input type="range" id="q5" name="q5" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q5-value">50</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Confidence -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <h3>Section B: Confidence in Performance</h3>
+                    </div>
+
+                    <div class="question" data-question="6">
+                        <div class="question-text">
+                            <span class="question-number">6</span>
+                            <span>Are you confident that you can perform at your previous level of sport participation?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Not confident at all</span>
+                                <span>Fully confident</span>
+                            </div>
+                            <input type="range" id="q6" name="q6" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q6-value">50</span></div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="7">
+                        <div class="question-text">
+                            <span class="question-number">7</span>
+                            <span>Are you confident that your knee can cope with demanding tasks?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Not confident at all</span>
+                                <span>Fully confident</span>
+                            </div>
+                            <input type="range" id="q7" name="q7" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q7-value">50</span></div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="8">
+                        <div class="question-text">
+                            <span class="question-number">8</span>
+                            <span>Are you confident that your knee will not give way when playing your sport?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Not confident at all</span>
+                                <span>Fully confident</span>
+                            </div>
+                            <input type="range" id="q8" name="q8" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q8-value">50</span></div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="9">
+                        <div class="question-text">
+                            <span class="question-number">9</span>
+                            <span>Are you confident about your ability to perform well at your sport?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Not confident at all</span>
+                                <span>Fully confident</span>
+                            </div>
+                            <input type="range" id="q9" name="q9" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q9-value">50</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Risk Appraisal -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <h3>Section C: Risk Appraisal</h3>
+                    </div>
+
+                    <div class="question" data-question="10">
+                        <div class="question-text">
+                            <span class="question-number">10</span>
+                            <span>Do you think you are likely to re-injure your knee by participating in your sport?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Extremely likely</span>
+                                <span>Not likely at all</span>
+                            </div>
+                            <input type="range" id="q10" name="q10" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q10-value">50</span></div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="11">
+                        <div class="question-text">
+                            <span class="question-number">11</span>
+                            <span>Do you think about your knee during sport?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>All the time</span>
+                                <span>Not at all</span>
+                            </div>
+                            <input type="range" id="q11" name="q11" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q11-value">50</span></div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="12">
+                        <div class="question-text">
+                            <span class="question-number">12</span>
+                            <span>Can you picture yourself playing your sport at full capacity?</span>
+                        </div>
+                        <div class="slider-container">
+                            <div class="slider-labels">
+                                <span>Cannot picture at all</span>
+                                <span>Can picture clearly</span>
+                            </div>
+                            <input type="range" id="q12" name="q12" min="0" max="100" value="50">
+                            <div class="slider-ticks">
+                                <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                            <div class="slider-value"><span id="q12-value">50</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button type="submit" class="submit-btn">Calculate My Readiness Score</button>
+                </div>
+            </form>
+
+            <!-- Results Section -->
+            <div class="results" id="results">
+                <div class="score-display" id="score-display">0</div>
+                <div class="score-label">out of 100</div>
+                <div class="readiness-label" id="readiness-label">Calculating...</div>
+
+                <!-- Score Gauge -->
+                <div class="score-gauge">
+                    <div class="threshold-marker" style="left: 65%;">Target: 65</div>
+                    <div class="gauge-marker" id="gauge-marker" style="left: 50%;"></div>
+                </div>
+                <div class="gauge-labels">
+                    <span>0</span>
+                    <span>Lower Readiness</span>
+                    <span>Higher Readiness</span>
+                    <span>100</span>
+                </div>
+
+                <div class="results-interpretation" id="interpretation">
+                    <!-- Filled by JavaScript -->
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" onclick="resetForm()">Take Again</button>
+                    <a href="/tools/" class="btn btn-primary">View Other Tools</a>
+                    <a href="/mental-health.html" class="btn btn-secondary">Mental Health Resources</a>
+                </div>
+            </div>
+
+            <!-- Privacy Reminder -->
+            <div class="privacy-reminder">
+                <strong>Privacy:</strong> Your responses are stored only on your device and are never sent to any server.
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+
+    <script>
+        // Update slider values in real-time
+        for (let i = 1; i <= 12; i++) {
+            const slider = document.getElementById(`q${i}`);
+            const valueDisplay = document.getElementById(`q${i}-value`);
+            slider.addEventListener('input', function() {
+                valueDisplay.textContent = this.value;
+            });
+        }
+
+        const form = document.getElementById('aclrsi-form');
+        const resultsDiv = document.getElementById('results');
+        const scoreDisplay = document.getElementById('score-display');
+        const readinessLabel = document.getElementById('readiness-label');
+        const interpretation = document.getElementById('interpretation');
+        const gaugeMarker = document.getElementById('gauge-marker');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let total = 0;
+            for (let i = 1; i <= 12; i++) {
+                total += parseInt(document.getElementById(`q${i}`).value);
+            }
+            const score = Math.round(total / 12);
+
+            // Determine readiness level
+            let readiness, readinessClass, interpretationHTML;
+
+            if (score < 50) {
+                readiness = "Lower Psychological Readiness";
+                readinessClass = "low";
+                interpretationHTML = `
+                    <h3>What This Means</h3>
+                    <p>Your score suggests you may have significant psychological barriers to returning to sport. This is <strong>not uncommon</strong> and does not reflect on you as an athlete.</p>
+                    <h4>Key Areas to Address:</h4>
+                    <ul>
+                        <li><strong>Fear of reinjury:</strong> This is the #1 barrier for most athletes. Working with a sports psychologist can help.</li>
+                        <li><strong>Confidence building:</strong> Gradual exposure to sport-specific movements can rebuild trust in your knee.</li>
+                        <li><strong>Mental skills training:</strong> Visualization, positive self-talk, and goal-setting are proven techniques.</li>
+                    </ul>
+                    <h4>Recommended Actions:</h4>
+                    <ul>
+                        <li>Discuss these results with your physical therapist</li>
+                        <li>Consider consulting a sports psychologist</li>
+                        <li>Focus on building confidence through graduated return-to-sport activities</li>
+                        <li>Retake this assessment monthly to track your progress</li>
+                    </ul>
+                    <p><strong>Remember:</strong> Psychological readiness can improve significantly with the right support and gradual exposure. Many athletes who initially score low go on to successfully return to sport.</p>
+                `;
+            } else if (score < 65) {
+                readiness = "Moderate Psychological Readiness";
+                readinessClass = "moderate";
+                interpretationHTML = `
+                    <h3>What This Means</h3>
+                    <p>Your score suggests moderate psychological readiness. You're making progress, but may benefit from additional work on confidence and managing fear before full return to sport.</p>
+                    <h4>Areas of Strength:</h4>
+                    <ul>
+                        <li>You're developing confidence in your knee</li>
+                        <li>You can likely participate in some sport activities</li>
+                        <li>Your fear levels are manageable but may still affect performance</li>
+                    </ul>
+                    <h4>Areas to Improve:</h4>
+                    <ul>
+                        <li>Continue building confidence through progressive sport exposure</li>
+                        <li>Practice visualization of successful performance</li>
+                        <li>Address any lingering fears with your PT or a sports psychologist</li>
+                        <li>Focus on process goals rather than outcome goals</li>
+                    </ul>
+                    <h4>Target Score:</h4>
+                    <p>Research suggests scores of <strong>65 or higher</strong> are associated with successful return to pre-injury sport levels. You're close—keep working on your psychological preparation alongside physical rehabilitation.</p>
+                `;
+            } else {
+                readiness = "Higher Psychological Readiness";
+                readinessClass = "high";
+                interpretationHTML = `
+                    <h3>What This Means</h3>
+                    <p>Congratulations! Your score suggests strong psychological readiness for return to sport. Scores ≥65 are associated with successful return to pre-injury activity levels.</p>
+                    <h4>Your Strengths:</h4>
+                    <ul>
+                        <li>Good confidence in your knee's ability to handle sport demands</li>
+                        <li>Manageable fear levels about reinjury</li>
+                        <li>Ability to visualize successful sport performance</li>
+                        <li>Positive mindset toward return to sport</li>
+                    </ul>
+                    <h4>Next Steps:</h4>
+                    <ul>
+                        <li>Discuss clearance for return to sport with your surgeon/PT</li>
+                        <li>Ensure you've met all physical criteria (strength, ROM, functional tests)</li>
+                        <li>Follow a graduated return-to-sport protocol</li>
+                        <li>Continue mental skills practice to maintain confidence</li>
+                    </ul>
+                    <h4>Important Reminder:</h4>
+                    <p>Psychological readiness is just <strong>one component</strong> of return-to-sport readiness. Make sure you've also met all physical criteria and received clearance from your healthcare team before returning to full competition.</p>
+                `;
+            }
+
+            // Update UI
+            scoreDisplay.textContent = score;
+            readinessLabel.textContent = readiness;
+            interpretation.innerHTML = interpretationHTML;
+            gaugeMarker.style.left = `${score}%`;
+
+            resultsDiv.className = `results ${readinessClass}`;
+            resultsDiv.style.display = 'block';
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Save to localStorage
+            const result = {
+                date: new Date().toISOString(),
+                score: score,
+                readiness: readiness
+            };
+            let history = JSON.parse(localStorage.getItem('aclrsi_history') || '[]');
+            history.push(result);
+            localStorage.setItem('aclrsi_history', JSON.stringify(history));
+        });
+
+        function resetForm() {
+            form.reset();
+            for (let i = 1; i <= 12; i++) {
+                document.getElementById(`q${i}-value`).textContent = '50';
+            }
+            resultsDiv.style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

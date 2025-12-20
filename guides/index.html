@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
+    <title>ACL Recovery Guides | Graft-Specific Protocols | ACL Heal</title>
+    <meta name="title" content="ACL Recovery Guides | Graft-Specific Protocols | ACL Heal">
+    <meta name="description" content="Comprehensive ACL recovery guides tailored to your specific graft type: patellar tendon, hamstring, quad tendon, and allograft. Evidence-based protocols and timelines.">
+    <meta name="keywords" content="ACL graft types, patellar tendon graft, hamstring graft, quad tendon graft, allograft ACL, ACL recovery protocols">
+    <meta name="author" content="Nolan Ambrosino">
+    <link rel="canonical" href="https://aclheal.com/guides/">
+
+    <!-- Favicon & Stylesheets -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/mobile-enhanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .guides-hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+        .guides-hero h1 { color: white; margin-bottom: var(--spacing-md); }
+        .guides-hero p { color: rgba(255, 255, 255, 0.95); max-width: 700px; margin: 0 auto; }
+
+        .guides-section { padding: var(--spacing-2xl) 0; }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .guide-card {
+            background: white;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--border-color);
+            overflow: hidden;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+        .guide-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .guide-card-header {
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+        .guide-card-header.patellar { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; }
+        .guide-card-header.hamstring { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; }
+        .guide-card-header.quad { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: white; }
+        .guide-card-header.allograft { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; }
+
+        .guide-icon { font-size: 3rem; margin-bottom: var(--spacing-sm); }
+        .guide-card-header h2 { color: white; margin: 0; font-size: 1.25rem; }
+
+        .guide-card-body { padding: var(--spacing-lg); }
+        .guide-card-body p { font-size: 0.95rem; margin-bottom: var(--spacing-md); }
+
+        .guide-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+        }
+        .guide-stat { text-align: center; }
+        .guide-stat .label { font-size: 0.75rem; color: var(--text-secondary); display: block; }
+        .guide-stat .value { font-weight: 600; color: var(--text-primary); }
+
+        .guide-features { list-style: none; margin-bottom: var(--spacing-md); }
+        .guide-features li {
+            padding: var(--spacing-xs) 0;
+            padding-left: var(--spacing-lg);
+            position: relative;
+            font-size: 0.9rem;
+        }
+        .guide-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .guide-cta {
+            display: block;
+            text-align: center;
+            padding: 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+        }
+        .guide-cta:hover { background: var(--primary-dark); text-decoration: none; }
+
+        .comparison-section {
+            background: var(--bg-secondary);
+            padding: var(--spacing-2xl) 0;
+        }
+        .comparison-section h2 { text-align: center; margin-bottom: var(--spacing-xl); }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .comparison-table th, .comparison-table td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .comparison-table th {
+            background: var(--text-primary);
+            color: white;
+            font-weight: 600;
+        }
+        .comparison-table tr:hover { background: var(--bg-secondary); }
+        .comparison-table td:first-child { font-weight: 500; }
+
+        @media (max-width: 768px) {
+            .comparison-table { font-size: 0.85rem; }
+            .comparison-table th, .comparison-table td { padding: var(--spacing-sm); }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="guides-hero">
+        <div class="container">
+            <h1>Graft-Specific Recovery Guides</h1>
+            <p>Your ACL graft type affects your recovery timeline and protocol. Choose your graft type below for tailored guidance, exercises, and precautions specific to your reconstruction.</p>
+        </div>
+    </section>
+
+    <!-- Guides Grid -->
+    <section class="guides-section">
+        <div class="container">
+            <div class="guides-grid">
+                <!-- Patellar Tendon -->
+                <a href="/guides/patellar-tendon.html" class="guide-card">
+                    <div class="guide-card-header patellar">
+                        <div class="guide-icon">🦴</div>
+                        <h2>Patellar Tendon (BTB) Graft</h2>
+                    </div>
+                    <div class="guide-card-body">
+                        <p>The "gold standard" autograft. Bone-to-bone healing provides excellent fixation strength but requires anterior knee protection.</p>
+                        <div class="guide-stats">
+                            <div class="guide-stat">
+                                <span class="label">Graft Strength</span>
+                                <span class="value">Excellent</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Healing Type</span>
+                                <span class="value">Bone-to-Bone</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Donor Site</span>
+                                <span class="value">Patellar Tendon</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Key Concern</span>
+                                <span class="value">Anterior Knee Pain</span>
+                            </div>
+                        </div>
+                        <ul class="guide-features">
+                            <li>Faster bone-to-bone healing (6-8 weeks)</li>
+                            <li>Excellent long-term stability</li>
+                            <li>Kneeling precautions required</li>
+                            <li>Higher initial anterior knee pain</li>
+                        </ul>
+                        <span class="guide-cta">View BTB Guide →</span>
+                    </div>
+                </a>
+
+                <!-- Hamstring -->
+                <a href="/guides/hamstring-graft.html" class="guide-card">
+                    <div class="guide-card-header hamstring">
+                        <div class="guide-icon">💪</div>
+                        <h2>Hamstring Tendon Graft</h2>
+                    </div>
+                    <div class="guide-card-body">
+                        <p>Popular autograft using semitendinosus and gracilis tendons. Less anterior knee pain but requires hamstring protection early.</p>
+                        <div class="guide-stats">
+                            <div class="guide-stat">
+                                <span class="label">Graft Strength</span>
+                                <span class="value">Very Good</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Healing Type</span>
+                                <span class="value">Soft Tissue</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Donor Site</span>
+                                <span class="value">Hamstrings</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Key Concern</span>
+                                <span class="value">Hamstring Weakness</span>
+                            </div>
+                        </div>
+                        <ul class="guide-features">
+                            <li>Less anterior knee pain than BTB</li>
+                            <li>Smaller incision, less scarring</li>
+                            <li>Hamstring strengthening crucial</li>
+                            <li>Soft tissue healing takes longer</li>
+                        </ul>
+                        <span class="guide-cta">View Hamstring Guide →</span>
+                    </div>
+                </a>
+
+                <!-- Quad Tendon -->
+                <a href="/guides/quad-tendon.html" class="guide-card">
+                    <div class="guide-card-header quad">
+                        <div class="guide-icon">🦿</div>
+                        <h2>Quad Tendon Graft</h2>
+                    </div>
+                    <div class="guide-card-body">
+                        <p>Increasingly popular autograft. Thick, strong graft with bone block on one end. Good option for revisions.</p>
+                        <div class="guide-stats">
+                            <div class="guide-stat">
+                                <span class="label">Graft Strength</span>
+                                <span class="value">Excellent</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Healing Type</span>
+                                <span class="value">Hybrid</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Donor Site</span>
+                                <span class="value">Quadriceps</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Key Concern</span>
+                                <span class="value">Quad Weakness</span>
+                            </div>
+                        </div>
+                        <ul class="guide-features">
+                            <li>Thickest available autograft</li>
+                            <li>Excellent for larger patients</li>
+                            <li>Aggressive quad rehab needed</li>
+                            <li>Good revision surgery option</li>
+                        </ul>
+                        <span class="guide-cta">View Quad Tendon Guide →</span>
+                    </div>
+                </a>
+
+                <!-- Allograft -->
+                <a href="/guides/allograft.html" class="guide-card">
+                    <div class="guide-card-header allograft">
+                        <div class="guide-icon">🎁</div>
+                        <h2>Allograft (Donor Tissue)</h2>
+                    </div>
+                    <div class="guide-card-body">
+                        <p>Cadaver tissue graft. No donor site morbidity but slower incorporation. Often used in older or less active patients.</p>
+                        <div class="guide-stats">
+                            <div class="guide-stat">
+                                <span class="label">Graft Strength</span>
+                                <span class="value">Good</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Healing Type</span>
+                                <span class="value">Incorporation</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Donor Site</span>
+                                <span class="value">None (Donor)</span>
+                            </div>
+                            <div class="guide-stat">
+                                <span class="label">Key Concern</span>
+                                <span class="value">Slower Healing</span>
+                            </div>
+                        </div>
+                        <ul class="guide-features">
+                            <li>No donor site pain or weakness</li>
+                            <li>Shorter surgery time</li>
+                            <li>Slower biological incorporation</li>
+                            <li>Higher rerupture rate in young athletes</li>
+                        </ul>
+                        <span class="guide-cta">View Allograft Guide →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2>Graft Comparison at a Glance</h2>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Factor</th>
+                            <th>Patellar (BTB)</th>
+                            <th>Hamstring</th>
+                            <th>Quad Tendon</th>
+                            <th>Allograft</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Initial Graft Strength</td>
+                            <td>Very Strong</td>
+                            <td>Strong</td>
+                            <td>Very Strong</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Bone-to-Bone Healing</td>
+                            <td>Yes (both ends)</td>
+                            <td>No</td>
+                            <td>One end only</td>
+                            <td>Varies</td>
+                        </tr>
+                        <tr>
+                            <td>Anterior Knee Pain Risk</td>
+                            <td>Higher</td>
+                            <td>Lower</td>
+                            <td>Moderate</td>
+                            <td>Lowest</td>
+                        </tr>
+                        <tr>
+                            <td>Donor Site Weakness</td>
+                            <td>Kneeling issues</td>
+                            <td>Hamstring weakness</td>
+                            <td>Quad weakness</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td>Return to Sport Timeline</td>
+                            <td>9-12 months</td>
+                            <td>9-12 months</td>
+                            <td>9-12 months</td>
+                            <td>12+ months</td>
+                        </tr>
+                        <tr>
+                            <td>Rerupture Rate (young athletes)</td>
+                            <td>~6%</td>
+                            <td>~8%</td>
+                            <td>~5%</td>
+                            <td>~15-25%</td>
+                        </tr>
+                        <tr>
+                            <td>Best Candidates</td>
+                            <td>High-level athletes</td>
+                            <td>Most patients</td>
+                            <td>Large patients, revisions</td>
+                            <td>Older/less active, multi-ligament</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align: center; margin-top: var(--spacing-md); font-size: 0.85rem; color: var(--text-secondary);"><em>Note: Individual outcomes vary. Discuss graft choice with your surgeon based on your specific circumstances.</em></p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding: var(--spacing-2xl) 0; text-align: center;">
+        <div class="container">
+            <h2>Not Sure About Your Graft Type?</h2>
+            <p style="max-width: 600px; margin: 0 auto var(--spacing-lg);">Check your surgical report or ask your surgeon's office. Understanding your graft type helps you follow the right precautions and optimize your recovery.</p>
+            <a href="/education/surgery-options.html" class="btn btn-primary">Learn More About ACL Surgery Options</a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+</body>
+</html>

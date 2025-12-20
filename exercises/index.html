@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
+    <title>ACL Recovery Exercise Library | Complete Exercise Guide | ACL Heal</title>
+    <meta name="title" content="ACL Recovery Exercise Library | Complete Exercise Guide | ACL Heal">
+    <meta name="description" content="Comprehensive library of ACL rehabilitation exercises organized by recovery stage, body part, and difficulty level. Video demonstrations, detailed instructions, and evidence-based protocols.">
+    <meta name="keywords" content="ACL exercises, ACL rehabilitation exercises, post-ACL surgery exercises, knee strengthening exercises, ACL recovery workout, physical therapy exercises">
+    <meta name="author" content="Nolan Ambrosino">
+    <link rel="canonical" href="https://aclheal.com/exercises/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aclheal.com/exercises/">
+    <meta property="og:title" content="ACL Recovery Exercise Library | Complete Exercise Guide">
+    <meta property="og:description" content="100+ exercises for every stage of ACL recovery. Filter by recovery phase, difficulty, equipment needed, and target muscle group.">
+    <meta property="og:image" content="https://aclheal.com/assets/images/og-exercises.jpg">
+    <meta property="og:site_name" content="ACL Heal">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ACL Recovery Exercise Library">
+    <meta name="twitter:description" content="Comprehensive ACL rehabilitation exercise library with detailed instructions for every recovery stage.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/mobile-enhanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "ACL Recovery Exercise Library",
+        "description": "Comprehensive library of ACL rehabilitation exercises",
+        "url": "https://aclheal.com/exercises/",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "ACL Rehabilitation Exercises",
+            "itemListElement": [
+                {
+                    "@type": "HowTo",
+                    "position": 1,
+                    "name": "Quad Sets",
+                    "url": "https://aclheal.com/exercises/quad-sets.html"
+                },
+                {
+                    "@type": "HowTo",
+                    "position": 2,
+                    "name": "Heel Slides",
+                    "url": "https://aclheal.com/exercises/heel-slides.html"
+                },
+                {
+                    "@type": "HowTo",
+                    "position": 3,
+                    "name": "Straight Leg Raises",
+                    "url": "https://aclheal.com/exercises/straight-leg-raises.html"
+                }
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ACL Heal",
+            "url": "https://aclheal.com"
+        }
+    }
+    </script>
+
+    <style>
+        /* Exercise Library Specific Styles */
+        .exercise-hero {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+
+        .exercise-hero h1 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .exercise-hero p {
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: var(--bg-secondary);
+            padding: var(--spacing-lg) 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 60px;
+            z-index: 100;
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+
+        .filter-group label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+
+        .filter-group select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background: white;
+            font-size: 0.9rem;
+            min-width: 150px;
+            cursor: pointer;
+        }
+
+        .filter-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .filter-reset {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            margin-left: auto;
+        }
+
+        .filter-reset:hover {
+            text-decoration: underline;
+        }
+
+        /* Exercise Cards Grid */
+        .exercise-library {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .exercise-count {
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-secondary);
+        }
+
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .exercise-card {
+            background: white;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .exercise-card-image {
+            height: 180px;
+            background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+
+        .exercise-card-content {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exercise-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+
+        .exercise-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            flex: 1;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .exercise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+
+        .exercise-tag {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .tag-stage {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .tag-difficulty-beginner {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .tag-difficulty-intermediate {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .tag-difficulty-advanced {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .tag-bodypart {
+            background: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        .tag-equipment {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        /* Stage Sections */
+        .stage-section {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .stage-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .stage-section-header h2 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .stage-link {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        /* Quick Stats */
+        .exercise-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            padding: var(--spacing-xl) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .stat-box .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .stat-box .label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: var(--spacing-xs);
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: var(--spacing-2xl);
+            color: var(--text-secondary);
+        }
+
+        .no-results h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        @media (max-width: 768px) {
+            .filter-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-group select {
+                width: 100%;
+            }
+
+            .filter-reset {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .exercise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="exercise-hero">
+        <div class="container">
+            <h1>ACL Recovery Exercise Library</h1>
+            <p>Comprehensive, evidence-based exercises for every stage of your ACL recovery journey. Detailed instructions, proper form cues, and progression guidelines.</p>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="container">
+        <div class="exercise-stats">
+            <div class="stat-box">
+                <div class="number">50+</div>
+                <div class="label">Total Exercises</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">8</div>
+                <div class="label">Recovery Stages</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">3</div>
+                <div class="label">Difficulty Levels</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">6</div>
+                <div class="label">Body Part Categories</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="stage-filter">Recovery Stage</label>
+                    <select id="stage-filter">
+                        <option value="">All Stages</option>
+                        <option value="pre-surgery">Pre-Surgery</option>
+                        <option value="weeks-0-2">Weeks 0-2</option>
+                        <option value="weeks-2-6">Weeks 2-6</option>
+                        <option value="weeks-6-12">Weeks 6-12</option>
+                        <option value="months-3-6">Months 3-6</option>
+                        <option value="months-6-9">Months 6-9</option>
+                        <option value="months-9-12">Months 9-12</option>
+                        <option value="long-term">Long-Term (12+ months)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="difficulty-filter">Difficulty</label>
+                    <select id="difficulty-filter">
+                        <option value="">All Levels</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="bodypart-filter">Body Part</label>
+                    <select id="bodypart-filter">
+                        <option value="">All Body Parts</option>
+                        <option value="quadriceps">Quadriceps</option>
+                        <option value="hamstrings">Hamstrings</option>
+                        <option value="glutes">Glutes</option>
+                        <option value="calves">Calves</option>
+                        <option value="hip">Hip</option>
+                        <option value="core">Core</option>
+                        <option value="full-leg">Full Leg</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="equipment-filter">Equipment</label>
+                    <select id="equipment-filter">
+                        <option value="">All Equipment</option>
+                        <option value="none">No Equipment</option>
+                        <option value="resistance-band">Resistance Band</option>
+                        <option value="weights">Weights/Dumbbells</option>
+                        <option value="stability-ball">Stability Ball</option>
+                        <option value="foam-roller">Foam Roller</option>
+                        <option value="balance-board">Balance Board</option>
+                        <option value="gym-machines">Gym Machines</option>
+                    </select>
+                </div>
+
+                <button class="filter-reset" onclick="resetFilters()">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercise Library Content -->
+    <main class="exercise-library">
+        <div class="container">
+            <p class="exercise-count"><span id="exercise-count">50+</span> exercises available</p>
+
+            <!-- Weeks 0-2: Immediate Post-Op -->
+            <section class="stage-section" data-stage="weeks-0-2">
+                <div class="stage-section-header">
+                    <h2>Weeks 0-2: Immediate Post-Op Exercises</h2>
+                    <a href="/stages/weeks-0-2.html" class="stage-link">View Stage Guide →</a>
+                </div>
+
+                <div class="exercise-grid">
+                    <a href="/exercises/quad-sets.html" class="exercise-card" data-stage="weeks-0-2" data-difficulty="beginner" data-bodypart="quadriceps" data-equipment="none">
+                        <div class="exercise-card-image">🦵</div>
+                        <div class="exercise-card-content">
+                            <h3>Quad Sets (Quadriceps Isometrics)</h3>
+                            <p>The most important early exercise. Re-establish neural connection to your quadriceps muscle after surgery.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 0-2</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Quadriceps</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/ankle-pumps.html" class="exercise-card" data-stage="weeks-0-2" data-difficulty="beginner" data-bodypart="calves" data-equipment="none">
+                        <div class="exercise-card-image">🦶</div>
+                        <div class="exercise-card-content">
+                            <h3>Ankle Pumps</h3>
+                            <p>Essential for preventing blood clots and reducing swelling. Perform frequently throughout the day.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 0-2</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Calves</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/heel-slides.html" class="exercise-card" data-stage="weeks-0-2" data-difficulty="beginner" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">↔️</div>
+                        <div class="exercise-card-content">
+                            <h3>Heel Slides</h3>
+                            <p>Restore knee flexion (bending) gradually. Use a towel or strap to assist if needed.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 0-2</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/straight-leg-raises.html" class="exercise-card" data-stage="weeks-0-2" data-difficulty="beginner" data-bodypart="quadriceps" data-equipment="none">
+                        <div class="exercise-card-image">⬆️</div>
+                        <div class="exercise-card-content">
+                            <h3>Straight Leg Raises (SLR)</h3>
+                            <p>Build quad strength while protecting your graft. Keep leg completely straight during lift.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 0-2</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Quadriceps</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/passive-knee-extension.html" class="exercise-card" data-stage="weeks-0-2" data-difficulty="beginner" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">📏</div>
+                        <div class="exercise-card-content">
+                            <h3>Passive Knee Extension</h3>
+                            <p>Critical for preventing extension deficit. Prop ankle and let gravity work. Do NOT skip this exercise.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 0-2</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/patellar-mobilizations.html" class="exercise-card" data-stage="weeks-0-2" data-difficulty="beginner" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">🔄</div>
+                        <div class="exercise-card-content">
+                            <h3>Patellar Mobilizations</h3>
+                            <p>Prevent kneecap stiffness by gently moving the patella in all directions.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 0-2</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Weeks 2-6: Early Recovery -->
+            <section class="stage-section" data-stage="weeks-2-6">
+                <div class="stage-section-header">
+                    <h2>Weeks 2-6: Early Recovery Exercises</h2>
+                    <a href="/stages/weeks-2-6.html" class="stage-link">View Stage Guide →</a>
+                </div>
+
+                <div class="exercise-grid">
+                    <a href="/exercises/standing-weight-shifts.html" class="exercise-card" data-stage="weeks-2-6" data-difficulty="beginner" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">⚖️</div>
+                        <div class="exercise-card-content">
+                            <h3>Standing Weight Shifts</h3>
+                            <p>Begin reloading the surgical leg with controlled weight shifts side to side.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 2-6</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/mini-squats.html" class="exercise-card" data-stage="weeks-2-6" data-difficulty="beginner" data-bodypart="quadriceps" data-equipment="none">
+                        <div class="exercise-card-image">🏋️</div>
+                        <div class="exercise-card-content">
+                            <h3>Mini Squats (Wall Slides)</h3>
+                            <p>Begin loading the quadriceps in a functional pattern. Limit depth to pain-free range.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 2-6</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Quadriceps</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/standing-hip-abduction.html" class="exercise-card" data-stage="weeks-2-6" data-difficulty="beginner" data-bodypart="hip" data-equipment="none">
+                        <div class="exercise-card-image">↔️</div>
+                        <div class="exercise-card-content">
+                            <h3>Standing Hip Abduction</h3>
+                            <p>Strengthen hip abductors while standing. Hold onto support for balance.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 2-6</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Hip</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/prone-hamstring-curls.html" class="exercise-card" data-stage="weeks-2-6" data-difficulty="beginner" data-bodypart="hamstrings" data-equipment="none">
+                        <div class="exercise-card-image">🔙</div>
+                        <div class="exercise-card-content">
+                            <h3>Prone Hamstring Curls</h3>
+                            <p>Begin hamstring strengthening lying face down. Gentle resistance only.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 2-6</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Hamstrings</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/calf-raises.html" class="exercise-card" data-stage="weeks-2-6" data-difficulty="beginner" data-bodypart="calves" data-equipment="none">
+                        <div class="exercise-card-image">⬆️</div>
+                        <div class="exercise-card-content">
+                            <h3>Standing Calf Raises</h3>
+                            <p>Bilateral calf raises to maintain gastrocnemius strength. Progress to single leg later.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 2-6</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Calves</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/stationary-bike.html" class="exercise-card" data-stage="weeks-2-6" data-difficulty="beginner" data-bodypart="full-leg" data-equipment="gym-machines">
+                        <div class="exercise-card-image">🚴</div>
+                        <div class="exercise-card-content">
+                            <h3>Stationary Bike</h3>
+                            <p>Low resistance cycling for ROM and cardiovascular fitness. Start with rocking, then full rotations.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 2-6</span>
+                                <span class="exercise-tag tag-difficulty-beginner">Beginner</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">Gym Machine</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Weeks 6-12: Strength Building -->
+            <section class="stage-section" data-stage="weeks-6-12">
+                <div class="stage-section-header">
+                    <h2>Weeks 6-12: Strength Building Exercises</h2>
+                    <a href="/stages/weeks-6-12.html" class="stage-link">View Stage Guide →</a>
+                </div>
+
+                <div class="exercise-grid">
+                    <a href="/exercises/leg-press.html" class="exercise-card" data-stage="weeks-6-12" data-difficulty="intermediate" data-bodypart="quadriceps" data-equipment="gym-machines">
+                        <div class="exercise-card-image">🦵</div>
+                        <div class="exercise-card-content">
+                            <h3>Leg Press</h3>
+                            <p>Progressive quad and glute strengthening. Control depth and avoid hyperextension.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 6-12</span>
+                                <span class="exercise-tag tag-difficulty-intermediate">Intermediate</span>
+                                <span class="exercise-tag tag-bodypart">Quadriceps</span>
+                                <span class="exercise-tag tag-equipment">Gym Machine</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/step-ups.html" class="exercise-card" data-stage="weeks-6-12" data-difficulty="intermediate" data-bodypart="quadriceps" data-equipment="none">
+                        <div class="exercise-card-image">🪜</div>
+                        <div class="exercise-card-content">
+                            <h3>Step-Ups</h3>
+                            <p>Functional movement pattern for quad strength and neuromuscular control.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 6-12</span>
+                                <span class="exercise-tag tag-difficulty-intermediate">Intermediate</span>
+                                <span class="exercise-tag tag-bodypart">Quadriceps</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/single-leg-balance.html" class="exercise-card" data-stage="weeks-6-12" data-difficulty="intermediate" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">🧘</div>
+                        <div class="exercise-card-content">
+                            <h3>Single Leg Balance</h3>
+                            <p>Proprioception and neuromuscular control training. Progress to unstable surfaces.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 6-12</span>
+                                <span class="exercise-tag tag-difficulty-intermediate">Intermediate</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/romanian-deadlift.html" class="exercise-card" data-stage="weeks-6-12" data-difficulty="intermediate" data-bodypart="hamstrings" data-equipment="weights">
+                        <div class="exercise-card-image">🏋️</div>
+                        <div class="exercise-card-content">
+                            <h3>Romanian Deadlift (RDL)</h3>
+                            <p>Eccentric hamstring strengthening. Essential for hamstring graft patients.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 6-12</span>
+                                <span class="exercise-tag tag-difficulty-intermediate">Intermediate</span>
+                                <span class="exercise-tag tag-bodypart">Hamstrings</span>
+                                <span class="exercise-tag tag-equipment">Weights</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/bridges.html" class="exercise-card" data-stage="weeks-6-12" data-difficulty="intermediate" data-bodypart="glutes" data-equipment="none">
+                        <div class="exercise-card-image">🌉</div>
+                        <div class="exercise-card-content">
+                            <h3>Glute Bridges (Single Leg)</h3>
+                            <p>Progress from double to single leg. Excellent glute and hamstring activation.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 6-12</span>
+                                <span class="exercise-tag tag-difficulty-intermediate">Intermediate</span>
+                                <span class="exercise-tag tag-bodypart">Glutes</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/lateral-band-walks.html" class="exercise-card" data-stage="weeks-6-12" data-difficulty="intermediate" data-bodypart="hip" data-equipment="resistance-band">
+                        <div class="exercise-card-image">↔️</div>
+                        <div class="exercise-card-content">
+                            <h3>Lateral Band Walks</h3>
+                            <p>Hip abductor strengthening with resistance band. Critical for knee stability.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Week 6-12</span>
+                                <span class="exercise-tag tag-difficulty-intermediate">Intermediate</span>
+                                <span class="exercise-tag tag-bodypart">Hip</span>
+                                <span class="exercise-tag tag-equipment">Resistance Band</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Months 3-6: Return to Impact -->
+            <section class="stage-section" data-stage="months-3-6">
+                <div class="stage-section-header">
+                    <h2>Months 3-6: Return to Impact Exercises</h2>
+                    <a href="/stages/months-3-6.html" class="stage-link">View Stage Guide →</a>
+                </div>
+
+                <div class="exercise-grid">
+                    <a href="/exercises/box-jumps.html" class="exercise-card" data-stage="months-3-6" data-difficulty="intermediate" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">📦</div>
+                        <div class="exercise-card-content">
+                            <h3>Box Jumps (Step Down)</h3>
+                            <p>Introduction to plyometrics. Start with step-down landings before jump-ups.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 3-6</span>
+                                <span class="exercise-tag tag-difficulty-intermediate">Intermediate</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/running-progression.html" class="exercise-card" data-stage="months-3-6" data-difficulty="intermediate" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">🏃</div>
+                        <div class="exercise-card-content">
+                            <h3>Running Progression</h3>
+                            <p>Structured return to running program. Walk-jog intervals progressing to continuous running.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 3-6</span>
+                                <span class="exercise-tag tag-difficulty-intermediate">Intermediate</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/single-leg-squats.html" class="exercise-card" data-stage="months-3-6" data-difficulty="advanced" data-bodypart="quadriceps" data-equipment="none">
+                        <div class="exercise-card-image">🦵</div>
+                        <div class="exercise-card-content">
+                            <h3>Single Leg Squats</h3>
+                            <p>Advanced single-leg strength. Critical for return-to-sport readiness assessment.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 3-6</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Quadriceps</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/nordic-curls.html" class="exercise-card" data-stage="months-3-6" data-difficulty="advanced" data-bodypart="hamstrings" data-equipment="none">
+                        <div class="exercise-card-image">💪</div>
+                        <div class="exercise-card-content">
+                            <h3>Nordic Hamstring Curls</h3>
+                            <p>Gold standard for eccentric hamstring strength. Injury prevention essential.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 3-6</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Hamstrings</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/lateral-hops.html" class="exercise-card" data-stage="months-3-6" data-difficulty="advanced" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">↔️</div>
+                        <div class="exercise-card-content">
+                            <h3>Lateral Hops</h3>
+                            <p>Side-to-side plyometrics for knee stability and change of direction preparation.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 3-6</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/bulgarian-split-squats.html" class="exercise-card" data-stage="months-3-6" data-difficulty="advanced" data-bodypart="quadriceps" data-equipment="none">
+                        <div class="exercise-card-image">🏋️</div>
+                        <div class="exercise-card-content">
+                            <h3>Bulgarian Split Squats</h3>
+                            <p>Advanced unilateral quad and glute strengthening with rear foot elevated.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 3-6</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Quadriceps</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Months 6-9: Sport-Specific Training -->
+            <section class="stage-section" data-stage="months-6-9">
+                <div class="stage-section-header">
+                    <h2>Months 6-9: Sport-Specific Training</h2>
+                    <a href="/stages/months-6-9.html" class="stage-link">View Stage Guide →</a>
+                </div>
+
+                <div class="exercise-grid">
+                    <a href="/exercises/cutting-drills.html" class="exercise-card" data-stage="months-6-9" data-difficulty="advanced" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">↗️</div>
+                        <div class="exercise-card-content">
+                            <h3>Cutting & Change of Direction</h3>
+                            <p>Progressive cutting drills from anticipated to reactive. Essential for return to sport.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 6-9</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/agility-ladder.html" class="exercise-card" data-stage="months-6-9" data-difficulty="advanced" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">🪜</div>
+                        <div class="exercise-card-content">
+                            <h3>Agility Ladder Drills</h3>
+                            <p>Quick feet patterns for coordination, agility, and neuromuscular control.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 6-9</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">Agility Ladder</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/reactive-drills.html" class="exercise-card" data-stage="months-6-9" data-difficulty="advanced" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">⚡</div>
+                        <div class="exercise-card-content">
+                            <h3>Reactive Agility Drills</h3>
+                            <p>Unpredictable movement training. Critical for sports with reactive demands.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 6-9</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/deceleration-drills.html" class="exercise-card" data-stage="months-6-9" data-difficulty="advanced" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">🛑</div>
+                        <div class="exercise-card-content">
+                            <h3>Deceleration Training</h3>
+                            <p>Learn to stop safely. Critical for ACL protection during sport activities.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 6-9</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/plyometric-progression.html" class="exercise-card" data-stage="months-6-9" data-difficulty="advanced" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">🦘</div>
+                        <div class="exercise-card-content">
+                            <h3>Advanced Plyometrics</h3>
+                            <p>Higher intensity jumping, bounding, and reactive plyometric exercises.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 6-9</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">No Equipment</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Months 9-12+: Return to Competition -->
+            <section class="stage-section" data-stage="months-9-12">
+                <div class="stage-section-header">
+                    <h2>Months 9-12+: Return to Competition</h2>
+                    <a href="/stages/months-9-12.html" class="stage-link">View Stage Guide →</a>
+                </div>
+
+                <div class="exercise-grid">
+                    <a href="/exercises/sport-specific-drills.html" class="exercise-card" data-stage="months-9-12" data-difficulty="advanced" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">⚽</div>
+                        <div class="exercise-card-content">
+                            <h3>Sport-Specific Drills</h3>
+                            <p>Return to the specific movements and demands of your sport in controlled settings.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 9-12</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">Sport-Specific</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/return-to-play-tests.html" class="exercise-card" data-stage="months-9-12" data-difficulty="advanced" data-bodypart="full-leg" data-equipment="none">
+                        <div class="exercise-card-image">✅</div>
+                        <div class="exercise-card-content">
+                            <h3>Return-to-Sport Testing</h3>
+                            <p>Comprehensive functional tests including hop tests, strength symmetry, and psychological readiness.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Month 9-12</span>
+                                <span class="exercise-tag tag-difficulty-advanced">Advanced</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">Various</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/exercises/maintenance-program.html" class="exercise-card" data-stage="long-term" data-difficulty="intermediate" data-bodypart="full-leg" data-equipment="various">
+                        <div class="exercise-card-image">♾️</div>
+                        <div class="exercise-card-content">
+                            <h3>Long-Term Maintenance Program</h3>
+                            <p>Ongoing strength and neuromuscular training to maintain knee health and prevent reinjury.</p>
+                            <div class="exercise-tags">
+                                <span class="exercise-tag tag-stage">Long-Term</span>
+                                <span class="exercise-tag tag-difficulty-intermediate">Intermediate</span>
+                                <span class="exercise-tag tag-bodypart">Full Leg</span>
+                                <span class="exercise-tag tag-equipment">Various</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="no-results" style="display: none;">
+                <h3>No exercises match your filters</h3>
+                <p>Try adjusting your filter criteria or <button class="filter-reset" onclick="resetFilters()">reset all filters</button></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="get-started" style="background: var(--bg-secondary);">
+        <div class="container" style="text-align: center; padding: var(--spacing-2xl) 0;">
+            <h2>Need Help Finding the Right Exercises?</h2>
+            <p style="max-width: 600px; margin: 0 auto var(--spacing-lg);">Check out our stage-by-stage recovery guides for detailed protocols tailored to exactly where you are in your journey.</p>
+            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+                <a href="/stages/pre-surgery.html" class="btn btn-primary">Recovery Stage Guides</a>
+                <a href="/tools/" class="btn btn-secondary">Assessment Tools</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+    <script>
+        // Exercise filtering functionality
+        const stageFilter = document.getElementById('stage-filter');
+        const difficultyFilter = document.getElementById('difficulty-filter');
+        const bodypartFilter = document.getElementById('bodypart-filter');
+        const equipmentFilter = document.getElementById('equipment-filter');
+        const noResults = document.getElementById('no-results');
+        const exerciseCount = document.getElementById('exercise-count');
+
+        function filterExercises() {
+            const stage = stageFilter.value;
+            const difficulty = difficultyFilter.value;
+            const bodypart = bodypartFilter.value;
+            const equipment = equipmentFilter.value;
+
+            const cards = document.querySelectorAll('.exercise-card');
+            const sections = document.querySelectorAll('.stage-section');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cardStage = card.dataset.stage;
+                const cardDifficulty = card.dataset.difficulty;
+                const cardBodypart = card.dataset.bodypart;
+                const cardEquipment = card.dataset.equipment;
+
+                const matchStage = !stage || cardStage === stage;
+                const matchDifficulty = !difficulty || cardDifficulty === difficulty;
+                const matchBodypart = !bodypart || cardBodypart === bodypart;
+                const matchEquipment = !equipment || cardEquipment === equipment;
+
+                if (matchStage && matchDifficulty && matchBodypart && matchEquipment) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Hide empty sections
+            sections.forEach(section => {
+                const visibleCards = section.querySelectorAll('.exercise-card:not([style*="display: none"])');
+                section.style.display = visibleCards.length > 0 ? '' : 'none';
+            });
+
+            // Show/hide no results message
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            exerciseCount.textContent = visibleCount;
+        }
+
+        function resetFilters() {
+            stageFilter.value = '';
+            difficultyFilter.value = '';
+            bodypartFilter.value = '';
+            equipmentFilter.value = '';
+            filterExercises();
+        }
+
+        // Add event listeners
+        stageFilter.addEventListener('change', filterExercises);
+        difficultyFilter.addEventListener('change', filterExercises);
+        bodypartFilter.addEventListener('change', filterExercises);
+        equipmentFilter.addEventListener('change', filterExercises);
+
+        // Initial count
+        document.addEventListener('DOMContentLoaded', () => {
+            const totalCards = document.querySelectorAll('.exercise-card').length;
+            exerciseCount.textContent = totalCards;
+        });
+    </script>
+</body>
+</html>

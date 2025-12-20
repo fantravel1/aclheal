@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PHQ-9 Depression Screening Tool for ACL recovery patients. Track symptoms of depression with this validated questionnaire. Your data stays private on your device.">
+    <meta name="keywords" content="PHQ-9, depression screening, mental health, ACL recovery, depression assessment">
+    <title>PHQ-9 Depression Screening | ACL Heal Tools</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PHQ-9 Depression Screening for ACL Recovery">
+    <meta property="og:description" content="Screen for depression symptoms during ACL recovery with this validated assessment tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aclheal.com/tools/phq9.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .phq9-tool {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tool-intro {
+            background: var(--bg-secondary, #f8f9fa);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .tool-intro h2 {
+            margin-top: 0;
+        }
+
+        .phq9-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .question-group {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .question-group:last-of-type {
+            border-bottom: none;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .question-number {
+            color: var(--primary-color, #2c5282);
+            margin-right: 0.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .option-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 0.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .option-label:hover {
+            border-color: var(--primary-color, #2c5282);
+            background: #f8f9fa;
+        }
+
+        .option-label input {
+            margin-bottom: 0.5rem;
+        }
+
+        .option-label input:checked + .option-text {
+            color: var(--primary-color, #2c5282);
+            font-weight: 600;
+        }
+
+        .option-label:has(input:checked) {
+            border-color: var(--primary-color, #2c5282);
+            background: rgba(44, 82, 130, 0.1);
+        }
+
+        .option-text {
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+
+        .option-value {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        .submit-section {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .btn-calculate {
+            background: var(--primary-color, #2c5282);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-calculate:hover {
+            background: #1a365d;
+        }
+
+        .btn-calculate:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Results */
+        .results-section {
+            display: none;
+            margin-top: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .score-display {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-label {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .severity-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .severity-minimal {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .severity-mild {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .severity-moderate {
+            background: #ffe0b2;
+            color: #e65100;
+        }
+
+        .severity-moderately-severe {
+            background: #ffccbc;
+            color: #bf360c;
+        }
+
+        .severity-severe {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        .interpretation {
+            text-align: left;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .interpretation h3 {
+            margin-top: 0;
+        }
+
+        .crisis-warning {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .crisis-warning h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        .crisis-links {
+            margin-top: 1rem;
+        }
+
+        .crisis-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: #0056b3;
+        }
+
+        .action-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+
+        /* Privacy Notice */
+        .privacy-notice {
+            background: #e8f4f8;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .privacy-icon {
+            font-size: 1.5rem;
+        }
+
+        .privacy-text {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .history-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .history-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .history-date {
+            font-weight: 600;
+        }
+
+        .history-score {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li aria-current="page">PHQ-9 Depression Screening</li>
+                </ol>
+            </nav>
+            <h1>PHQ-9 Depression Screening</h1>
+            <p class="lead">A validated questionnaire to help identify symptoms of depression during your ACL recovery.</p>
+        </div>
+    </section>
+
+    <main class="tool-page">
+        <div class="container">
+            <div class="phq9-tool">
+
+                <div class="privacy-notice">
+                    <span class="privacy-icon">🔒</span>
+                    <div class="privacy-text">
+                        <strong>Your privacy is protected.</strong> All responses are stored only on your device using localStorage. Nothing is sent to any server. You can clear your data at any time.
+                    </div>
+                </div>
+
+                <div class="tool-intro">
+                    <h2>About This Screening</h2>
+                    <p>The PHQ-9 (Patient Health Questionnaire-9) is a validated tool used by healthcare providers worldwide to screen for depression. It asks about symptoms you may have experienced over the <strong>past two weeks</strong>.</p>
+                    <p>Depression is common during ACL recovery—research shows rates of 20-40% in the first few months post-surgery. Identifying symptoms early allows you to seek appropriate support.</p>
+                    <p><strong>Important:</strong> This is a screening tool, not a diagnosis. If your results suggest depression, please discuss them with a healthcare provider.</p>
+                </div>
+
+                <form id="phq9-form" class="phq9-form">
+                    <p><strong>Over the last 2 weeks, how often have you been bothered by any of the following problems?</strong></p>
+
+                    <!-- Question 1 -->
+                    <div class="question-group">
+                        <p class="question-text"><span class="question-number">1.</span> Little interest or pleasure in doing things</p>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="q1" value="0" required>
+                                <span class="option-text">Not at all</span>
+                                <span class="option-value">(0)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q1" value="1">
+                                <span class="option-text">Several days</span>
+                                <span class="option-value">(1)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q1" value="2">
+                                <span class="option-text">More than half the days</span>
+                                <span class="option-value">(2)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q1" value="3">
+                                <span class="option-text">Nearly every day</span>
+                                <span class="option-value">(3)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-group">
+                        <p class="question-text"><span class="question-number">2.</span> Feeling down, depressed, or hopeless</p>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="q2" value="0" required>
+                                <span class="option-text">Not at all</span>
+                                <span class="option-value">(0)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q2" value="1">
+                                <span class="option-text">Several days</span>
+                                <span class="option-value">(1)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q2" value="2">
+                                <span class="option-text">More than half the days</span>
+                                <span class="option-value">(2)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q2" value="3">
+                                <span class="option-text">Nearly every day</span>
+                                <span class="option-value">(3)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-group">
+                        <p class="question-text"><span class="question-number">3.</span> Trouble falling or staying asleep, or sleeping too much</p>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="0" required>
+                                <span class="option-text">Not at all</span>
+                                <span class="option-value">(0)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="1">
+                                <span class="option-text">Several days</span>
+                                <span class="option-value">(1)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="2">
+                                <span class="option-text">More than half the days</span>
+                                <span class="option-value">(2)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="3">
+                                <span class="option-text">Nearly every day</span>
+                                <span class="option-value">(3)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-group">
+                        <p class="question-text"><span class="question-number">4.</span> Feeling tired or having little energy</p>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="0" required>
+                                <span class="option-text">Not at all</span>
+                                <span class="option-value">(0)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="1">
+                                <span class="option-text">Several days</span>
+                                <span class="option-value">(1)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="2">
+                                <span class="option-text">More than half the days</span>
+                                <span class="option-value">(2)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="3">
+                                <span class="option-text">Nearly every day</span>
+                                <span class="option-value">(3)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question-group">
+                        <p class="question-text"><span class="question-number">5.</span> Poor appetite or overeating</p>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="0" required>
+                                <span class="option-text">Not at all</span>
+                                <span class="option-value">(0)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="1">
+                                <span class="option-text">Several days</span>
+                                <span class="option-value">(1)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="2">
+                                <span class="option-text">More than half the days</span>
+                                <span class="option-value">(2)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="3">
+                                <span class="option-text">Nearly every day</span>
+                                <span class="option-value">(3)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question-group">
+                        <p class="question-text"><span class="question-number">6.</span> Feeling bad about yourself — or that you are a failure or have let yourself or your family down</p>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="q6" value="0" required>
+                                <span class="option-text">Not at all</span>
+                                <span class="option-value">(0)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q6" value="1">
+                                <span class="option-text">Several days</span>
+                                <span class="option-value">(1)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q6" value="2">
+                                <span class="option-text">More than half the days</span>
+                                <span class="option-value">(2)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q6" value="3">
+                                <span class="option-text">Nearly every day</span>
+                                <span class="option-value">(3)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question-group">
+                        <p class="question-text"><span class="question-number">7.</span> Trouble concentrating on things, such as reading the newspaper or watching television</p>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="q7" value="0" required>
+                                <span class="option-text">Not at all</span>
+                                <span class="option-value">(0)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q7" value="1">
+                                <span class="option-text">Several days</span>
+                                <span class="option-value">(1)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q7" value="2">
+                                <span class="option-text">More than half the days</span>
+                                <span class="option-value">(2)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q7" value="3">
+                                <span class="option-text">Nearly every day</span>
+                                <span class="option-value">(3)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question-group">
+                        <p class="question-text"><span class="question-number">8.</span> Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual</p>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="q8" value="0" required>
+                                <span class="option-text">Not at all</span>
+                                <span class="option-value">(0)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q8" value="1">
+                                <span class="option-text">Several days</span>
+                                <span class="option-value">(1)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q8" value="2">
+                                <span class="option-text">More than half the days</span>
+                                <span class="option-value">(2)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q8" value="3">
+                                <span class="option-text">Nearly every day</span>
+                                <span class="option-value">(3)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question-group">
+                        <p class="question-text"><span class="question-number">9.</span> Thoughts that you would be better off dead, or of hurting yourself in some way</p>
+                        <div class="options-grid">
+                            <label class="option-label">
+                                <input type="radio" name="q9" value="0" required>
+                                <span class="option-text">Not at all</span>
+                                <span class="option-value">(0)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q9" value="1">
+                                <span class="option-text">Several days</span>
+                                <span class="option-value">(1)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q9" value="2">
+                                <span class="option-text">More than half the days</span>
+                                <span class="option-value">(2)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q9" value="3">
+                                <span class="option-text">Nearly every day</span>
+                                <span class="option-value">(3)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="submit-section">
+                        <button type="submit" class="btn-calculate">Calculate My Score</button>
+                    </div>
+                </form>
+
+                <!-- Results Section -->
+                <div id="results" class="results-section">
+                    <div class="score-display" id="score-value">0</div>
+                    <div class="score-label">out of 27</div>
+                    <div class="severity-badge" id="severity-badge">Minimal</div>
+
+                    <div class="interpretation" id="interpretation">
+                        <!-- Filled by JavaScript -->
+                    </div>
+
+                    <div id="crisis-warning" class="crisis-warning" style="display: none;">
+                        <h4>Please Seek Support</h4>
+                        <p>You indicated thoughts of self-harm or death. These feelings are serious, and you don't have to face them alone.</p>
+                        <div class="crisis-links">
+                            <a href="tel:988">Call 988 (Suicide & Crisis Lifeline)</a>
+                            <a href="sms:741741">Text HOME to 741741</a>
+                            <a href="/crisis-resources.html">More Resources</a>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button onclick="resetForm()" class="btn-secondary">Take Again</button>
+                        <a href="/mental-health.html" class="btn-secondary">Mental Health Resources</a>
+                        <a href="/tools/" class="btn-secondary">All Tools</a>
+                    </div>
+                </div>
+
+                <!-- History Section -->
+                <div id="history-section" class="history-section" style="display: none;">
+                    <h3>Your PHQ-9 History</h3>
+                    <p>Track your progress over time. This data is stored only on your device.</p>
+                    <div id="history-list" class="history-list">
+                        <!-- Filled by JavaScript -->
+                    </div>
+                    <button onclick="clearHistory()" class="btn-secondary" style="margin-top: 1rem;">Clear History</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 ACL Heal. For informational purposes only. Not medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/header.js"></script>
+    <script>
+        const form = document.getElementById('phq9-form');
+        const resultsSection = document.getElementById('results');
+        const scoreValue = document.getElementById('score-value');
+        const severityBadge = document.getElementById('severity-badge');
+        const interpretation = document.getElementById('interpretation');
+        const crisisWarning = document.getElementById('crisis-warning');
+        const historySection = document.getElementById('history-section');
+        const historyList = document.getElementById('history-list');
+
+        // Load history on page load
+        loadHistory();
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let score = 0;
+            let q9Score = 0;
+
+            for (let i = 1; i <= 9; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    const value = parseInt(selected.value);
+                    score += value;
+                    if (i === 9) q9Score = value;
+                }
+            }
+
+            // Display results
+            scoreValue.textContent = score;
+
+            // Determine severity
+            let severity, severityClass, interpretationText;
+
+            if (score <= 4) {
+                severity = 'Minimal Depression';
+                severityClass = 'severity-minimal';
+                interpretationText = `
+                    <h3>What This Means</h3>
+                    <p>Your score suggests <strong>minimal or no depression</strong>. This is great news for your mental health during recovery.</p>
+                    <p>Even with a low score, remember that recovery is challenging. It's normal to have difficult days. Continue to monitor your mood and don't hesitate to seek support if things change.</p>
+                `;
+            } else if (score <= 9) {
+                severity = 'Mild Depression';
+                severityClass = 'severity-mild';
+                interpretationText = `
+                    <h3>What This Means</h3>
+                    <p>Your score suggests <strong>mild depression symptoms</strong>. This is common during ACL recovery due to the physical limitations, pain, and life disruption.</p>
+                    <p><strong>Recommended actions:</strong></p>
+                    <ul>
+                        <li>Monitor your mood over the coming weeks</li>
+                        <li>Focus on self-care strategies (sleep, nutrition, social connection)</li>
+                        <li>Consider discussing with your healthcare provider if symptoms persist</li>
+                        <li>Re-take this screening in 2 weeks to track changes</li>
+                    </ul>
+                `;
+            } else if (score <= 14) {
+                severity = 'Moderate Depression';
+                severityClass = 'severity-moderate';
+                interpretationText = `
+                    <h3>What This Means</h3>
+                    <p>Your score suggests <strong>moderate depression symptoms</strong>. These symptoms may be affecting your daily life and potentially your recovery.</p>
+                    <p><strong>Recommended actions:</strong></p>
+                    <ul>
+                        <li><strong>Discuss these results with a healthcare provider</strong></li>
+                        <li>Consider speaking with a mental health professional</li>
+                        <li>Treatment (therapy, medication, or both) can be very effective</li>
+                        <li>Your orthopedic team should know about your mental health</li>
+                    </ul>
+                `;
+            } else if (score <= 19) {
+                severity = 'Moderately Severe Depression';
+                severityClass = 'severity-moderately-severe';
+                interpretationText = `
+                    <h3>What This Means</h3>
+                    <p>Your score suggests <strong>moderately severe depression</strong>. This level of symptoms typically requires treatment and professional support.</p>
+                    <p><strong>Recommended actions:</strong></p>
+                    <ul>
+                        <li><strong>Please reach out to a healthcare provider soon</strong></li>
+                        <li>Consider calling your primary care doctor this week</li>
+                        <li>Treatment is effective and can significantly improve how you feel</li>
+                        <li>Don't try to push through alone—help is available</li>
+                    </ul>
+                `;
+            } else {
+                severity = 'Severe Depression';
+                severityClass = 'severity-severe';
+                interpretationText = `
+                    <h3>What This Means</h3>
+                    <p>Your score suggests <strong>severe depression symptoms</strong>. This level of symptoms typically requires active treatment and professional support.</p>
+                    <p><strong>Important next steps:</strong></p>
+                    <ul>
+                        <li><strong>Please contact a healthcare provider as soon as possible</strong></li>
+                        <li>If you're in crisis, call 988 (Suicide & Crisis Lifeline)</li>
+                        <li>Effective treatments are available—you can feel better</li>
+                        <li>Consider reaching out to a trusted friend or family member</li>
+                    </ul>
+                `;
+            }
+
+            severityBadge.textContent = severity;
+            severityBadge.className = 'severity-badge ' + severityClass;
+            interpretation.innerHTML = interpretationText;
+
+            // Show crisis warning if Q9 > 0
+            if (q9Score > 0) {
+                crisisWarning.style.display = 'block';
+            } else {
+                crisisWarning.style.display = 'none';
+            }
+
+            // Save to history
+            saveToHistory(score, severity);
+
+            // Show results
+            resultsSection.classList.add('show');
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        function saveToHistory(score, severity) {
+            const history = JSON.parse(localStorage.getItem('phq9History') || '[]');
+            history.unshift({
+                date: new Date().toISOString(),
+                score: score,
+                severity: severity
+            });
+            // Keep only last 10 entries
+            if (history.length > 10) history.pop();
+            localStorage.setItem('phq9History', JSON.stringify(history));
+            loadHistory();
+        }
+
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('phq9History') || '[]');
+            if (history.length > 0) {
+                historySection.style.display = 'block';
+                historyList.innerHTML = history.map(entry => {
+                    const date = new Date(entry.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    });
+                    return `
+                        <div class="history-item">
+                            <div>
+                                <span class="history-date">${date}</span>
+                                <span class="history-severity"> - ${entry.severity}</span>
+                            </div>
+                            <span class="history-score">${entry.score}/27</span>
+                        </div>
+                    `;
+                }).join('');
+            } else {
+                historySection.style.display = 'none';
+            }
+        }
+
+        function clearHistory() {
+            if (confirm('Are you sure you want to clear your PHQ-9 history?')) {
+                localStorage.removeItem('phq9History');
+                loadHistory();
+            }
+        }
+
+        function resetForm() {
+            form.reset();
+            resultsSection.classList.remove('show');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
