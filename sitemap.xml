@@ -332,6 +332,35 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Success Stories -->
+    <url>
+        <loc>https://aclheal.com/success-stories/</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/success-stories/jake-soccer.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/success-stories/ashley-running.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/success-stories/emma-crossfit.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
     <!-- Legal Pages -->
     <url>
         <loc>https://aclheal.com/disclaimer.html</loc>
