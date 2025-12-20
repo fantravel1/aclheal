@@ -413,6 +413,34 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://aclheal.com/exercises/hip-abduction-machine.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/exercises/band-walks.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/exercises/front-squat.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/exercises/kettlebell-swings.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Tools & Assessments -->
     <url>
         <loc>https://aclheal.com/tools/</loc>
