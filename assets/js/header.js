@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <li role="none"><a href="/education/protocols.html" role="menuitem">Recovery Protocols</a></li>
                         </ul>
                     </li>
+                    <li role="none"><a href="/success-stories/" role="menuitem">Success Stories</a></li>
                     <li role="none"><a href="/faq.html" role="menuitem">FAQ</a></li>
                     <li role="none"><a href="/mental-health.html" class="highlight" role="menuitem">Mental Health</a></li>
                 </ul>
