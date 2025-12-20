@@ -203,6 +203,13 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://aclheal.com/exercises/plyometrics.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Tools & Assessments -->
     <url>
         <loc>https://aclheal.com/tools/</loc>
@@ -278,6 +285,20 @@
     <url>
         <loc>https://aclheal.com/guides/prehab.html</loc>
         <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/guides/return-to-running.html</loc>
+        <lastmod>2024-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://aclheal.com/guides/sleep-recovery.html</loc>
+        <lastmod>2024-12-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
