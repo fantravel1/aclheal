@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             <li role="none"><a href="/tools/phq9.html" role="menuitem">PHQ-9 Depression Screening</a></li>
                             <li role="none"><a href="/tools/gad7.html" role="menuitem">GAD-7 Anxiety Screening</a></li>
                             <li role="none"><a href="/tools/acl-rsi.html" role="menuitem">ACL-RSI Readiness Scale</a></li>
+                            <li role="none"><a href="/tools/ikdc.html" role="menuitem">IKDC Knee Evaluation</a></li>
+                            <li role="none"><a href="/tools/lysholm.html" role="menuitem">Lysholm Knee Score</a></li>
+                            <li role="none"><a href="/tools/hop-test.html" role="menuitem">Hop Test Tracker</a></li>
                             <li role="none"><a href="/tools/return-to-sport-checklist.html" role="menuitem">Return-to-Sport Checklist</a></li>
                         </ul>
                     </li>
@@ -50,9 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="/guides/" role="menuitem" aria-haspopup="true" aria-expanded="false">Guides</a>
                         <ul class="dropdown-menu" role="menu">
                             <li role="none"><a href="/guides/" role="menuitem">Graft-Specific Guides</a></li>
+                            <li role="none"><a href="/guides/sports/" role="menuitem">Sport-Specific Guides</a></li>
+                            <li role="none"><a href="/guides/nutrition.html" role="menuitem">Nutrition Guide</a></li>
                             <li role="none"><a href="/education/knee-anatomy.html" role="menuitem">Knee Anatomy & ACL</a></li>
                             <li role="none"><a href="/education/surgery-options.html" role="menuitem">Surgery & Graft Types</a></li>
                             <li role="none"><a href="/education/protocols.html" role="menuitem">Recovery Protocols</a></li>
+                            <li role="none"><a href="/education/complications.html" role="menuitem">Complications Guide</a></li>
+                            <li role="none"><a href="/education/research.html" role="menuitem">Research & Evidence</a></li>
                         </ul>
                     </li>
                     <li role="none"><a href="/success-stories/" role="menuitem">Success Stories</a></li>
