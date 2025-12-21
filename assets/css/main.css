@@ -179,6 +179,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo a {
@@ -828,6 +829,7 @@ a:hover {
         padding: var(--spacing-md);
         box-shadow: var(--shadow-lg);
         border-top: 1px solid var(--border-color);
+        z-index: 999;
     }
 
     .nav-menu.active {
