@@ -3,27 +3,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-
-            // Update aria-expanded for accessibility
-            const isExpanded = navMenu.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', isExpanded);
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-    }
+    // Note: Mobile menu toggle is handled in header.js
+    // This file handles other interactive features
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -49,11 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 // Close mobile menu if open
+                const navMenu = document.querySelector('.nav-menu');
+                const menuToggle = document.querySelector('.menu-toggle');
                 if (navMenu) {
                     navMenu.classList.remove('active');
                     if (menuToggle) {
                         menuToggle.setAttribute('aria-expanded', 'false');
                     }
+                    document.body.classList.remove('menu-open');
                 }
             }
         });
