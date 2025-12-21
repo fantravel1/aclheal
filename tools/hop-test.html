@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hop Test Tracker for ACL recovery. Record and track single hop, triple hop, crossover hop, and timed hop test results to measure progress.">
+    <meta name="keywords" content="hop test ACL, single leg hop test, triple hop test, crossover hop, LSI calculator, ACL return to sport testing">
+    <title>Hop Test Tracker | ACL Heal Tools</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ACL Hop Test Tracker">
+    <meta property="og:description" content="Track your hop test results and calculate limb symmetry index during ACL recovery.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aclheal.com/tools/hop-test.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .hop-tool {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tool-intro {
+            background: var(--bg-secondary, #f8f9fa);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .test-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .test-card h3 {
+            color: var(--primary-color, #2c5282);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .test-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .input-group input {
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary-color, #2c5282);
+            outline: none;
+        }
+
+        .lsi-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        .lsi-value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .lsi-pass { color: #10b981; }
+        .lsi-close { color: #f59e0b; }
+        .lsi-fail { color: #ef4444; }
+
+        .lsi-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .lsi-status {
+            margin-left: auto;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-pass { background: #d4edda; color: #155724; }
+        .status-close { background: #fff3cd; color: #856404; }
+        .status-fail { background: #f8d7da; color: #721c24; }
+
+        .submit-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn-save {
+            background: var(--primary-color, #2c5282);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn-save:hover {
+            background: #1a365d;
+        }
+
+        .summary-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .summary-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .summary-card h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .summary-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .privacy-notice {
+            background: #e8f4f8;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .history-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .history-entry {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+        }
+
+        .history-date {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .history-scores {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .input-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li aria-current="page">Hop Test Tracker</li>
+                </ol>
+            </nav>
+            <h1>Hop Test Tracker</h1>
+            <p class="lead">Record your hop test results and automatically calculate your Limb Symmetry Index (LSI).</p>
+        </div>
+    </section>
+
+    <main class="tool-page">
+        <div class="container">
+            <div class="hop-tool">
+
+                <div class="privacy-notice">
+                    <span style="font-size: 1.5rem;">&#128274;</span>
+                    <div>
+                        <strong>Your privacy is protected.</strong> All data is stored only on your device. Nothing is sent to any server.
+                    </div>
+                </div>
+
+                <div class="tool-intro">
+                    <h2>About Hop Testing</h2>
+                    <p>Hop tests are functional assessments used to evaluate lower limb power, confidence, and readiness for sport. The four standard hop tests are:</p>
+                    <ul>
+                        <li><strong>Single Hop for Distance:</strong> Jump as far as possible on one leg, land on same leg</li>
+                        <li><strong>Triple Hop:</strong> Three consecutive hops, measuring total distance</li>
+                        <li><strong>Crossover Hop:</strong> Three hops crossing over a line, measuring total distance</li>
+                        <li><strong>6-Meter Timed Hop:</strong> Hop 6 meters as fast as possible, measuring time</li>
+                    </ul>
+                    <p><strong>LSI Target:</strong> ≥90% on all hop tests is typically required for return-to-sport clearance.</p>
+                </div>
+
+                <form id="hop-form">
+                    <!-- Single Hop -->
+                    <div class="test-card">
+                        <h3>&#127939; Single Hop for Distance</h3>
+                        <p>Record the best of 3 attempts. Measure in centimeters from takeoff line to heel at landing.</p>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="single-surgical">Surgical Leg (cm)</label>
+                                <input type="number" id="single-surgical" placeholder="e.g., 145" min="0" max="300" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="single-nonsurgical">Non-Surgical Leg (cm)</label>
+                                <input type="number" id="single-nonsurgical" placeholder="e.g., 155" min="0" max="300" step="0.1">
+                            </div>
+                        </div>
+                        <div class="lsi-display" id="single-lsi">
+                            <div>
+                                <div class="lsi-value" id="single-lsi-value">--%</div>
+                                <div class="lsi-label">Limb Symmetry Index</div>
+                            </div>
+                            <span class="lsi-status" id="single-status">Enter values</span>
+                        </div>
+                    </div>
+
+                    <!-- Triple Hop -->
+                    <div class="test-card">
+                        <h3>&#127939; Triple Hop for Distance</h3>
+                        <p>Three consecutive hops on same leg. Measure total distance from start to final landing.</p>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="triple-surgical">Surgical Leg (cm)</label>
+                                <input type="number" id="triple-surgical" placeholder="e.g., 420" min="0" max="1000" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="triple-nonsurgical">Non-Surgical Leg (cm)</label>
+                                <input type="number" id="triple-nonsurgical" placeholder="e.g., 450" min="0" max="1000" step="0.1">
+                            </div>
+                        </div>
+                        <div class="lsi-display" id="triple-lsi">
+                            <div>
+                                <div class="lsi-value" id="triple-lsi-value">--%</div>
+                                <div class="lsi-label">Limb Symmetry Index</div>
+                            </div>
+                            <span class="lsi-status" id="triple-status">Enter values</span>
+                        </div>
+                    </div>
+
+                    <!-- Crossover Hop -->
+                    <div class="test-card">
+                        <h3>&#127939; Crossover Hop for Distance</h3>
+                        <p>Three hops, alternately crossing over a 15cm line. Measure total distance.</p>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="crossover-surgical">Surgical Leg (cm)</label>
+                                <input type="number" id="crossover-surgical" placeholder="e.g., 380" min="0" max="1000" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="crossover-nonsurgical">Non-Surgical Leg (cm)</label>
+                                <input type="number" id="crossover-nonsurgical" placeholder="e.g., 410" min="0" max="1000" step="0.1">
+                            </div>
+                        </div>
+                        <div class="lsi-display" id="crossover-lsi">
+                            <div>
+                                <div class="lsi-value" id="crossover-lsi-value">--%</div>
+                                <div class="lsi-label">Limb Symmetry Index</div>
+                            </div>
+                            <span class="lsi-status" id="crossover-status">Enter values</span>
+                        </div>
+                    </div>
+
+                    <!-- Timed Hop -->
+                    <div class="test-card">
+                        <h3>&#9201; 6-Meter Timed Hop</h3>
+                        <p>Hop 6 meters as fast as possible. Record time in seconds. <em>Note: For timed tests, lower is better, so LSI is calculated differently.</em></p>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="timed-surgical">Surgical Leg (seconds)</label>
+                                <input type="number" id="timed-surgical" placeholder="e.g., 2.4" min="0" max="30" step="0.01">
+                            </div>
+                            <div class="input-group">
+                                <label for="timed-nonsurgical">Non-Surgical Leg (seconds)</label>
+                                <input type="number" id="timed-nonsurgical" placeholder="e.g., 2.1" min="0" max="30" step="0.01">
+                            </div>
+                        </div>
+                        <div class="lsi-display" id="timed-lsi">
+                            <div>
+                                <div class="lsi-value" id="timed-lsi-value">--%</div>
+                                <div class="lsi-label">Limb Symmetry Index</div>
+                            </div>
+                            <span class="lsi-status" id="timed-status">Enter values</span>
+                        </div>
+                    </div>
+
+                    <div class="submit-section">
+                        <button type="submit" class="btn-save">Save Results</button>
+                    </div>
+                </form>
+
+                <!-- Summary -->
+                <div class="summary-section" id="summary-section" style="display: none;">
+                    <h3>Summary</h3>
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <h4>Single Hop LSI</h4>
+                            <div class="summary-value" id="sum-single">--%</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Triple Hop LSI</h4>
+                            <div class="summary-value" id="sum-triple">--%</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Crossover Hop LSI</h4>
+                            <div class="summary-value" id="sum-crossover">--%</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Timed Hop LSI</h4>
+                            <div class="summary-value" id="sum-timed">--%</div>
+                        </div>
+                    </div>
+                    <div id="overall-status" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; text-align: center;"></div>
+                </div>
+
+                <!-- History -->
+                <div id="history-section" class="history-section" style="display: none;">
+                    <h3>Test History</h3>
+                    <p>Track your progress over time.</p>
+                    <div id="history-list"></div>
+                    <button onclick="clearHistory()" class="btn-secondary" style="margin-top: 1rem;">Clear History</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 ACL Heal. For informational purposes only. Not medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/header.js"></script>
+    <script>
+        // Calculate LSI for distance tests (higher = better)
+        function calcLSI(surgical, nonSurgical) {
+            if (!surgical || !nonSurgical || nonSurgical === 0) return null;
+            return Math.round((surgical / nonSurgical) * 100);
+        }
+
+        // Calculate LSI for timed tests (lower = better, so inverted)
+        function calcTimedLSI(surgical, nonSurgical) {
+            if (!surgical || !nonSurgical || surgical === 0) return null;
+            return Math.round((nonSurgical / surgical) * 100);
+        }
+
+        function updateLSI(prefix, isTimed = false) {
+            const surgical = parseFloat(document.getElementById(`${prefix}-surgical`).value);
+            const nonSurgical = parseFloat(document.getElementById(`${prefix}-nonsurgical`).value);
+
+            const lsi = isTimed ? calcTimedLSI(surgical, nonSurgical) : calcLSI(surgical, nonSurgical);
+            const valueEl = document.getElementById(`${prefix}-lsi-value`);
+            const statusEl = document.getElementById(`${prefix}-status`);
+
+            if (lsi === null) {
+                valueEl.textContent = '--%';
+                valueEl.className = 'lsi-value';
+                statusEl.textContent = 'Enter values';
+                statusEl.className = 'lsi-status';
+                return null;
+            }
+
+            valueEl.textContent = lsi + '%';
+
+            if (lsi >= 90) {
+                valueEl.className = 'lsi-value lsi-pass';
+                statusEl.textContent = 'Pass (≥90%)';
+                statusEl.className = 'lsi-status status-pass';
+            } else if (lsi >= 80) {
+                valueEl.className = 'lsi-value lsi-close';
+                statusEl.textContent = 'Close (80-89%)';
+                statusEl.className = 'lsi-status status-close';
+            } else {
+                valueEl.className = 'lsi-value lsi-fail';
+                statusEl.textContent = 'Below Target';
+                statusEl.className = 'lsi-status status-fail';
+            }
+
+            return lsi;
+        }
+
+        // Real-time updates
+        ['single', 'triple', 'crossover'].forEach(prefix => {
+            document.getElementById(`${prefix}-surgical`).addEventListener('input', () => updateLSI(prefix));
+            document.getElementById(`${prefix}-nonsurgical`).addEventListener('input', () => updateLSI(prefix));
+        });
+
+        document.getElementById('timed-surgical').addEventListener('input', () => updateLSI('timed', true));
+        document.getElementById('timed-nonsurgical').addEventListener('input', () => updateLSI('timed', true));
+
+        // Form submission
+        document.getElementById('hop-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const singleLSI = updateLSI('single');
+            const tripleLSI = updateLSI('triple');
+            const crossoverLSI = updateLSI('crossover');
+            const timedLSI = updateLSI('timed', true);
+
+            // Show summary
+            const summarySection = document.getElementById('summary-section');
+            summarySection.style.display = 'block';
+
+            document.getElementById('sum-single').textContent = singleLSI ? singleLSI + '%' : '--';
+            document.getElementById('sum-triple').textContent = tripleLSI ? tripleLSI + '%' : '--';
+            document.getElementById('sum-crossover').textContent = crossoverLSI ? crossoverLSI + '%' : '--';
+            document.getElementById('sum-timed').textContent = timedLSI ? timedLSI + '%' : '--';
+
+            // Overall status
+            const scores = [singleLSI, tripleLSI, crossoverLSI, timedLSI].filter(s => s !== null);
+            const overallEl = document.getElementById('overall-status');
+
+            if (scores.length === 0) {
+                overallEl.innerHTML = '<p>Enter at least one complete test to see results.</p>';
+                overallEl.style.background = '#f8f9fa';
+            } else if (scores.every(s => s >= 90)) {
+                overallEl.innerHTML = '<strong>All tests ≥90% LSI - Hop test criteria met!</strong>';
+                overallEl.style.background = '#d4edda';
+                overallEl.style.color = '#155724';
+            } else if (scores.some(s => s >= 90)) {
+                const passing = scores.filter(s => s >= 90).length;
+                overallEl.innerHTML = `<strong>${passing} of ${scores.length} tests ≥90%</strong> - Keep working on remaining deficits`;
+                overallEl.style.background = '#fff3cd';
+                overallEl.style.color = '#856404';
+            } else {
+                overallEl.innerHTML = '<strong>No tests ≥90% yet</strong> - Continue rehabilitation and retest';
+                overallEl.style.background = '#f8d7da';
+                overallEl.style.color = '#721c24';
+            }
+
+            // Save to history
+            if (scores.length > 0) {
+                saveToHistory({
+                    single: singleLSI,
+                    triple: tripleLSI,
+                    crossover: crossoverLSI,
+                    timed: timedLSI
+                });
+            }
+
+            summarySection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        function saveToHistory(data) {
+            const history = JSON.parse(localStorage.getItem('hopTestHistory') || '[]');
+            history.unshift({
+                date: new Date().toISOString(),
+                ...data
+            });
+            if (history.length > 20) history.pop();
+            localStorage.setItem('hopTestHistory', JSON.stringify(history));
+            loadHistory();
+        }
+
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('hopTestHistory') || '[]');
+            const section = document.getElementById('history-section');
+            const list = document.getElementById('history-list');
+
+            if (history.length > 0) {
+                section.style.display = 'block';
+                list.innerHTML = history.map(entry => {
+                    const date = new Date(entry.date).toLocaleDateString('en-US', {
+                        year: 'numeric', month: 'short', day: 'numeric'
+                    });
+                    return `<div class="history-entry">
+                        <div class="history-date">${date}</div>
+                        <div class="history-scores">
+                            ${entry.single ? `<span>Single: ${entry.single}%</span>` : ''}
+                            ${entry.triple ? `<span>Triple: ${entry.triple}%</span>` : ''}
+                            ${entry.crossover ? `<span>Crossover: ${entry.crossover}%</span>` : ''}
+                            ${entry.timed ? `<span>Timed: ${entry.timed}%</span>` : ''}
+                        </div>
+                    </div>`;
+                }).join('');
+            }
+        }
+
+        function clearHistory() {
+            if (confirm('Clear your hop test history?')) {
+                localStorage.removeItem('hopTestHistory');
+                document.getElementById('history-section').style.display = 'none';
+            }
+        }
+
+        loadHistory();
+    </script>
+</body>
+</html>

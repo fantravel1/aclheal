@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lysholm Knee Scoring Scale. Assess knee function and stability during ACL recovery with this validated clinical assessment tool.">
+    <meta name="keywords" content="Lysholm score, knee scoring scale, ACL assessment, knee function test, Lysholm questionnaire">
+    <title>Lysholm Knee Score | ACL Heal Tools</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lysholm Knee Scoring Scale">
+    <meta property="og:description" content="Validated assessment to measure knee function and stability during ACL recovery.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aclheal.com/tools/lysholm.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .lysholm-tool {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tool-intro {
+            background: var(--bg-secondary, #f8f9fa);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .lysholm-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .question-group {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color, #2c5282);
+            font-size: 1.1rem;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .option-label:hover {
+            background: #f8f9fa;
+            border-color: var(--primary-color, #2c5282);
+        }
+
+        .option-label input {
+            margin-right: 0.75rem;
+            margin-top: 0.2rem;
+        }
+
+        .option-label:has(input:checked) {
+            background: rgba(44, 82, 130, 0.1);
+            border-color: var(--primary-color, #2c5282);
+        }
+
+        .option-points {
+            margin-left: auto;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .submit-section {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .btn-calculate {
+            background: var(--primary-color, #2c5282);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn-calculate:hover {
+            background: #1a365d;
+        }
+
+        .results-section {
+            display: none;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .score-display {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-label {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .score-category {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-excellent { background: #d4edda; color: #155724; }
+        .category-good { background: #cce5ff; color: #004085; }
+        .category-fair { background: #fff3cd; color: #856404; }
+        .category-poor { background: #f8d7da; color: #721c24; }
+
+        .interpretation {
+            text-align: left;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .privacy-notice {
+            background: #e8f4f8;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .action-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .history-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li aria-current="page">Lysholm Knee Score</li>
+                </ol>
+            </nav>
+            <h1>Lysholm Knee Scoring Scale</h1>
+            <p class="lead">A validated questionnaire focusing on knee symptoms and function, particularly stability.</p>
+        </div>
+    </section>
+
+    <main class="tool-page">
+        <div class="container">
+            <div class="lysholm-tool">
+
+                <div class="privacy-notice">
+                    <span style="font-size: 1.5rem;">&#128274;</span>
+                    <div>
+                        <strong>Your privacy is protected.</strong> All responses are stored only on your device. Nothing is sent to any server.
+                    </div>
+                </div>
+
+                <div class="tool-intro">
+                    <h2>About the Lysholm Score</h2>
+                    <p>The Lysholm Knee Scoring Scale is a widely used patient-reported outcome measure that evaluates knee function with special emphasis on instability. It assesses 8 domains:</p>
+                    <ul>
+                        <li>Limping (5 points)</li>
+                        <li>Support (5 points)</li>
+                        <li>Locking (15 points)</li>
+                        <li>Instability/Giving Way (25 points)</li>
+                        <li>Pain (25 points)</li>
+                        <li>Swelling (10 points)</li>
+                        <li>Stair Climbing (10 points)</li>
+                        <li>Squatting (5 points)</li>
+                    </ul>
+                    <p>Total score: 0-100. Higher scores indicate better function.</p>
+                </div>
+
+                <form id="lysholm-form" class="lysholm-form">
+                    <!-- Limp -->
+                    <div class="question-group">
+                        <p class="question-text">1. Limp</p>
+                        <div class="options-list">
+                            <label class="option-label">
+                                <input type="radio" name="limp" value="5" required>
+                                <span>None</span>
+                                <span class="option-points">(5 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="limp" value="3">
+                                <span>Slight or periodical</span>
+                                <span class="option-points">(3 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="limp" value="0">
+                                <span>Severe and constant</span>
+                                <span class="option-points">(0 pts)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="question-group">
+                        <p class="question-text">2. Support</p>
+                        <div class="options-list">
+                            <label class="option-label">
+                                <input type="radio" name="support" value="5" required>
+                                <span>None</span>
+                                <span class="option-points">(5 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="support" value="2">
+                                <span>Stick or crutch</span>
+                                <span class="option-points">(2 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="support" value="0">
+                                <span>Weight-bearing impossible</span>
+                                <span class="option-points">(0 pts)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Locking -->
+                    <div class="question-group">
+                        <p class="question-text">3. Locking</p>
+                        <div class="options-list">
+                            <label class="option-label">
+                                <input type="radio" name="locking" value="15" required>
+                                <span>No locking and no catching sensations</span>
+                                <span class="option-points">(15 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="locking" value="10">
+                                <span>Catching sensation but no locking</span>
+                                <span class="option-points">(10 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="locking" value="6">
+                                <span>Locking occasionally</span>
+                                <span class="option-points">(6 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="locking" value="2">
+                                <span>Locking frequently</span>
+                                <span class="option-points">(2 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="locking" value="0">
+                                <span>Locked joint on examination</span>
+                                <span class="option-points">(0 pts)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Instability -->
+                    <div class="question-group">
+                        <p class="question-text">4. Instability (Giving Way)</p>
+                        <div class="options-list">
+                            <label class="option-label">
+                                <input type="radio" name="instability" value="25" required>
+                                <span>Never gives way</span>
+                                <span class="option-points">(25 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="instability" value="20">
+                                <span>Rarely during athletics or other severe exertion</span>
+                                <span class="option-points">(20 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="instability" value="15">
+                                <span>Frequently during athletics or other severe exertion (or unable to participate)</span>
+                                <span class="option-points">(15 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="instability" value="10">
+                                <span>Occasionally in daily activities</span>
+                                <span class="option-points">(10 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="instability" value="5">
+                                <span>Often in daily activities</span>
+                                <span class="option-points">(5 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="instability" value="0">
+                                <span>Every step</span>
+                                <span class="option-points">(0 pts)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pain -->
+                    <div class="question-group">
+                        <p class="question-text">5. Pain</p>
+                        <div class="options-list">
+                            <label class="option-label">
+                                <input type="radio" name="pain" value="25" required>
+                                <span>None</span>
+                                <span class="option-points">(25 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="pain" value="20">
+                                <span>Inconstant and slight during severe exertion</span>
+                                <span class="option-points">(20 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="pain" value="15">
+                                <span>Marked during severe exertion</span>
+                                <span class="option-points">(15 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="pain" value="10">
+                                <span>Marked on or after walking more than 2 km</span>
+                                <span class="option-points">(10 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="pain" value="5">
+                                <span>Marked on or after walking less than 2 km</span>
+                                <span class="option-points">(5 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="pain" value="0">
+                                <span>Constant</span>
+                                <span class="option-points">(0 pts)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Swelling -->
+                    <div class="question-group">
+                        <p class="question-text">6. Swelling</p>
+                        <div class="options-list">
+                            <label class="option-label">
+                                <input type="radio" name="swelling" value="10" required>
+                                <span>None</span>
+                                <span class="option-points">(10 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="swelling" value="6">
+                                <span>On severe exertion</span>
+                                <span class="option-points">(6 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="swelling" value="2">
+                                <span>On ordinary exertion</span>
+                                <span class="option-points">(2 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="swelling" value="0">
+                                <span>Constant</span>
+                                <span class="option-points">(0 pts)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Stair Climbing -->
+                    <div class="question-group">
+                        <p class="question-text">7. Stair Climbing</p>
+                        <div class="options-list">
+                            <label class="option-label">
+                                <input type="radio" name="stairs" value="10" required>
+                                <span>No problems</span>
+                                <span class="option-points">(10 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="stairs" value="6">
+                                <span>Slightly impaired</span>
+                                <span class="option-points">(6 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="stairs" value="2">
+                                <span>One step at a time</span>
+                                <span class="option-points">(2 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="stairs" value="0">
+                                <span>Impossible</span>
+                                <span class="option-points">(0 pts)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Squatting -->
+                    <div class="question-group">
+                        <p class="question-text">8. Squatting</p>
+                        <div class="options-list">
+                            <label class="option-label">
+                                <input type="radio" name="squatting" value="5" required>
+                                <span>No problems</span>
+                                <span class="option-points">(5 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="squatting" value="4">
+                                <span>Slightly impaired</span>
+                                <span class="option-points">(4 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="squatting" value="2">
+                                <span>Not beyond 90 degrees</span>
+                                <span class="option-points">(2 pts)</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="squatting" value="0">
+                                <span>Impossible</span>
+                                <span class="option-points">(0 pts)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="submit-section">
+                        <button type="submit" class="btn-calculate">Calculate My Score</button>
+                    </div>
+                </form>
+
+                <!-- Results Section -->
+                <div id="results" class="results-section">
+                    <div class="score-display" id="score-value">0</div>
+                    <div class="score-label">out of 100</div>
+                    <div class="score-category" id="score-category">Excellent</div>
+
+                    <div class="interpretation" id="interpretation">
+                        <!-- Filled by JavaScript -->
+                    </div>
+
+                    <div class="action-buttons">
+                        <button onclick="resetForm()" class="btn-secondary">Take Again</button>
+                        <a href="/tools/" class="btn-secondary">All Tools</a>
+                    </div>
+                </div>
+
+                <!-- History Section -->
+                <div id="history-section" class="history-section" style="display: none;">
+                    <h3>Your Lysholm Score History</h3>
+                    <p>Track your progress over time.</p>
+                    <div id="history-list" style="margin-top: 1rem;"></div>
+                    <button onclick="clearHistory()" class="btn-secondary" style="margin-top: 1rem;">Clear History</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 ACL Heal. For informational purposes only. Not medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/header.js"></script>
+    <script>
+        loadHistory();
+
+        document.getElementById('lysholm-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const limp = parseInt(document.querySelector('input[name="limp"]:checked')?.value || 0);
+            const support = parseInt(document.querySelector('input[name="support"]:checked')?.value || 0);
+            const locking = parseInt(document.querySelector('input[name="locking"]:checked')?.value || 0);
+            const instability = parseInt(document.querySelector('input[name="instability"]:checked')?.value || 0);
+            const pain = parseInt(document.querySelector('input[name="pain"]:checked')?.value || 0);
+            const swelling = parseInt(document.querySelector('input[name="swelling"]:checked')?.value || 0);
+            const stairs = parseInt(document.querySelector('input[name="stairs"]:checked')?.value || 0);
+            const squatting = parseInt(document.querySelector('input[name="squatting"]:checked')?.value || 0);
+
+            const score = limp + support + locking + instability + pain + swelling + stairs + squatting;
+
+            document.getElementById('score-value').textContent = score;
+
+            let category, categoryClass, interpretation;
+            if (score >= 95) {
+                category = 'Excellent';
+                categoryClass = 'category-excellent';
+                interpretation = `
+                    <h3>Excellent Knee Function</h3>
+                    <p>A score of ${score} indicates <strong>excellent knee function</strong> with minimal to no limitations. This is consistent with a well-rehabilitated knee or near-complete recovery.</p>
+                    <p>Continue maintenance exercises and stay active!</p>
+                `;
+            } else if (score >= 84) {
+                category = 'Good';
+                categoryClass = 'category-good';
+                interpretation = `
+                    <h3>Good Knee Function</h3>
+                    <p>A score of ${score} indicates <strong>good knee function</strong>. You may have minor limitations but overall function is strong.</p>
+                    <p>Continue rehabilitation to address any remaining deficits.</p>
+                `;
+            } else if (score >= 65) {
+                category = 'Fair';
+                categoryClass = 'category-fair';
+                interpretation = `
+                    <h3>Fair Knee Function</h3>
+                    <p>A score of ${score} indicates <strong>fair knee function</strong>. Some activities may be limited by symptoms like pain, swelling, or instability.</p>
+                    <p>Discuss your progress with your PT and focus on the domains where you scored lowest.</p>
+                `;
+            } else {
+                category = 'Poor';
+                categoryClass = 'category-poor';
+                interpretation = `
+                    <h3>Limited Knee Function</h3>
+                    <p>A score of ${score} indicates <strong>significant limitations</strong> in knee function. This is common in early recovery or if complications have occurred.</p>
+                    <p>Please discuss these results with your healthcare team to ensure appropriate management.</p>
+                `;
+            }
+
+            const categoryEl = document.getElementById('score-category');
+            categoryEl.textContent = category;
+            categoryEl.className = 'score-category ' + categoryClass;
+            document.getElementById('interpretation').innerHTML = interpretation;
+
+            document.getElementById('results').classList.add('show');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+            saveToHistory(score, category);
+        });
+
+        function saveToHistory(score, category) {
+            const history = JSON.parse(localStorage.getItem('lysholmHistory') || '[]');
+            history.unshift({ date: new Date().toISOString(), score, category });
+            if (history.length > 10) history.pop();
+            localStorage.setItem('lysholmHistory', JSON.stringify(history));
+            loadHistory();
+        }
+
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('lysholmHistory') || '[]');
+            const section = document.getElementById('history-section');
+            const list = document.getElementById('history-list');
+
+            if (history.length > 0) {
+                section.style.display = 'block';
+                list.innerHTML = history.map(entry => {
+                    const date = new Date(entry.date).toLocaleDateString('en-US', {
+                        year: 'numeric', month: 'short', day: 'numeric'
+                    });
+                    return `<div style="display: flex; justify-content: space-between; padding: 0.75rem; background: #f8f9fa; border-radius: 6px; margin-bottom: 0.5rem;">
+                        <span>${date} - ${entry.category}</span>
+                        <strong>${entry.score}/100</strong>
+                    </div>`;
+                }).join('');
+            }
+        }
+
+        function clearHistory() {
+            if (confirm('Clear your Lysholm score history?')) {
+                localStorage.removeItem('lysholmHistory');
+                document.getElementById('history-section').style.display = 'none';
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('lysholm-form').reset();
+            document.getElementById('results').classList.remove('show');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
