@@ -36,6 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
                             <li role="none"><a href="/stages/long-term.html" role="menuitem">Long-Term: 12-24+ Months</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown" role="none">
+                        <a href="/landing/understanding-acl-injuries.html" role="menuitem" aria-haspopup="true" aria-expanded="false">Learn</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="none"><a href="/landing/understanding-acl-injuries.html" role="menuitem">Understanding ACL Injuries</a></li>
+                            <li role="none"><a href="/landing/diagnosis-imaging.html" role="menuitem">Diagnosis & Imaging</a></li>
+                            <li role="none"><a href="/landing/surgery-decisions.html" role="menuitem">Surgery Decisions</a></li>
+                            <li role="none"><a href="/landing/prehab.html" role="menuitem">Pre-Surgery (Prehab)</a></li>
+                            <li role="none"><a href="/landing/post-surgery-recovery.html" role="menuitem">Post-Surgery Recovery</a></li>
+                            <li role="none"><a href="/landing/rehabilitation.html" role="menuitem">Rehabilitation & PT</a></li>
+                            <li role="none"><a href="/landing/complications.html" role="menuitem">Complications & Concerns</a></li>
+                            <li role="none"><a href="/landing/return-to-sport.html" role="menuitem">Return to Sport</a></li>
+                            <li role="none"><a href="/landing/prevention.html" role="menuitem">Prevention</a></li>
+                            <li role="none"><a href="/landing/long-term-outlook.html" role="menuitem">Long-Term Outlook</a></li>
+                        </ul>
+                    </li>
                     <li role="none"><a href="/exercises/" role="menuitem">Exercises</a></li>
                     <li class="dropdown" role="none">
                         <a href="/tools/" role="menuitem" aria-haspopup="true" aria-expanded="false">Tools</a>
